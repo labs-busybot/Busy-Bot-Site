@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Busy Bot Labs - Build Better Systems for Your Business</title>
+<meta name="description" content="Busy Bot Labs builds the documentation, workflows, and knowledge systems that let your team operate consistently, without you having to repeat yourself every day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+img,svg{max-width:100%;}
+:root{
+  --navy:#ffffff;
+  --navy2:#eef4ff;
+  --navy3:#dfe9fb;
+  --ink:#0f1b33;
+  --ink2:#152544;
+  --ink3:#1e3157;
+  --blue:#2563eb;
+  --blue2:#3b82f6;
+  --blue3:#5f8ff5;
+  --cyan:#22d3ee;
+  --white:#ffffff;
+  --text:#16253d;
+  --muted:rgba(22,37,61,0.72);
+  --dim:rgba(22,37,61,0.48);
+  --border:rgba(37,99,235,0.14);
+  --border2:rgba(37,99,235,0.28);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Syne',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;}
+
+/* CURSOR */
+#cursor{position:fixed;width:10px;height:10px;background:var(--blue2);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:normal;transition:width 0.2s,height 0.2s;}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(59,130,246,0.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.18s ease;mix-blend-mode:normal;}
+body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-color:var(--blue2);background:rgba(59,130,246,0.06);}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:500;
+  background:rgba(15,27,51,0.94);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:0 3rem;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;gap:11px;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(59,130,246,0.6));}
+.nav-brand{font-size:17px;font-weight:800;color:var(--white);letter-spacing:-0.3px;}
+.nav-brand span{color:var(--blue2);}
+.nav-links{display:flex;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.68);text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{
+  background:var(--blue);color:var(--white) !important;
+  padding:10px 22px;border-radius:6px;
+  font-size:13px;font-weight:700;letter-spacing:0.4px;
+  transition:background 0.2s,transform 0.15s;
+}
+.nav-cta:hover{background:var(--blue2) !important;transform:translateY(-1px);}
+
+/* HERO */
+.hero{
+  background:linear-gradient(180deg,#f9fbff 0%, #f0f5ff 100%);
+  padding:5.5rem 3rem 4.5rem;
+  position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;top:-140px;right:-200px;width:650px;height:650px;
+  background:radial-gradient(circle,rgba(37,99,235,0.13) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-glow2{
+  position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(34,211,238,0.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(59,130,246,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.05) 1px,transparent 1px);
+  background-size:52px 52px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 100% at 80% 50%,black,transparent);
+  mask-image:radial-gradient(ellipse 70% 100% at 80% 50%,black,transparent);
+}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:4.5rem;align-items:center;position:relative;z-index:1;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(34,211,238,0.09);border:1px solid rgba(34,211,238,0.22);
+  color:var(--cyan);font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;border-radius:100px;margin-bottom:1.75rem;
+  display:inline-flex;
+}
+.pulse{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 1.8s ease-in-out infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
+.hero h1{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(2.6rem,4.5vw,4rem);
+  line-height:1.07;letter-spacing:-1.5px;margin-bottom:1.3rem;
+}
+.hero h1 em{font-style:italic;color:var(--blue3);}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.78;max-width:480px;margin-bottom:2rem;font-weight:400;}
+.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:var(--white);
+  padding:14px 26px;border-radius:6px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background 0.2s,transform 0.15s,box-shadow 0.2s;letter-spacing:0.2px;
+}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,99,235,0.35);}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--muted);
+  padding:14px 22px;border-radius:6px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:600;
+  text-decoration:none;border:1px solid var(--border2);cursor:pointer;
+  transition:all 0.2s;letter-spacing:0.2px;
+}
+.btn-outline:hover{color:var(--text);border-color:rgba(59,130,246,0.5);}
+.stars{color:#fbbf24;font-size:12px;letter-spacing:1px;margin-bottom:2px;}
+
+/* HERO FORM CARD */
+.hero-form-card{
+  background:rgba(255,255,255,0.96);
+  border:1px solid var(--border2);border-radius:12px;
+  width:100%;padding:2rem;position:relative;overflow:hidden;
+  box-shadow:0 24px 70px rgba(15,27,51,0.12);
+}
+.hero-form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+}
+.hfc-sublabel{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;}
+.hfc-title{font-size:19px;font-weight:800;margin-bottom:0.35rem;letter-spacing:-0.3px;}
+.hfc-desc{font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.55;}
+.hf-row{margin-bottom:0.9rem;}
+.hf-row label{display:block;font-size:11px;font-weight:700;color:var(--dim);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;}
+.hf-row input,.hf-row select{
+  width:100%;padding:11px 14px;
+  background:rgba(37,99,235,0.04);
+  border:1px solid var(--border);border-radius:6px;
+  font-size:14px;font-family:'Syne',sans-serif;
+  color:var(--text);outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  -webkit-appearance:none;appearance:none;
+}
+.hf-row input::placeholder{color:var(--dim);}
+.hf-row select{color:var(--muted);}
+.hf-row input:focus,.hf-row select:focus{border-color:var(--blue2);background:rgba(37,99,235,0.07);}
+.hf-row select option{background:#ffffff;color:var(--text);}
+.hfc-btn{
+  width:100%;padding:13px;background:var(--blue);color:var(--white);
+  border:none;border-radius:6px;font-family:'Syne',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s;
+  letter-spacing:0.3px;margin-top:0.25rem;
+}
+.hfc-btn:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,0.4);}
+.hfc-note{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;margin-top:0.75rem;letter-spacing:0.3px;}
+.hfc-checks{display:flex;flex-direction:column;gap:8px;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);}
+.hfc-check{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
+.check-icon{width:16px;height:16px;background:rgba(34,211,238,0.1);border-radius:50%;border:1px solid rgba(34,211,238,0.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* TICKER */
+.ticker{
+  background:linear-gradient(90deg,var(--ink),var(--ink2));
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:14px 0;overflow:hidden;
+}
+.ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{
+  display:flex;align-items:center;gap:12px;padding:0 2.5rem;
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:rgba(255,255,255,0.62);letter-spacing:0.8px;text-transform:uppercase;white-space:nowrap;
+}
+.ticker-sep{width:4px;height:4px;background:var(--blue2);border-radius:50%;flex-shrink:0;}
+
+/* STATS BAND */
+.stats-band{
+  padding:3rem 3rem;background:linear-gradient(135deg,var(--ink),var(--ink2));
+  border-bottom:1px solid var(--border);
+}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.stat-box{background:rgba(255,255,255,0.03);padding:2rem 1.75rem;transition:background 0.3s;}
+.stat-box:hover{background:rgba(255,255,255,0.08);}
+.stat-n{font-family:'Instrument Serif',serif;font-size:2.8rem;color:var(--white);line-height:1;margin-bottom:0.4rem;}
+.stat-n span{color:var(--blue3);}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.58);letter-spacing:1.2px;text-transform:uppercase;line-height:1.55;}
+
+/* SECTIONS */
+.section{padding:6rem 3rem;}
+.s-inner{max-width:1100px;margin:0 auto;}
+.s-tag{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);
+  letter-spacing:2px;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;margin-bottom:1rem;
+}
+.s-tag::before{content:'';width:24px;height:1px;background:var(--cyan);flex-shrink:0;}
+.s-h{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-1px;margin-bottom:1rem;}
+.s-h em{font-style:italic;color:var(--blue3);}
+.s-sub{font-size:15px;color:var(--muted);line-height:1.78;max-width:560px;margin-bottom:3rem;}
+
+/* PROBLEM GRID */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.prob-card{background:var(--navy2);padding:2rem;transition:background 0.25s;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(15,27,51,0.04);}
+.prob-card:hover{background:var(--navy3);transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,27,51,0.12);}
+.prob-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s;}
+.prob-card:hover::after{transform:scaleX(1);}
+.pi{width:38px;height:38px;background:rgba(37,99,235,0.1);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.prob-card h4{font-size:15px;font-weight:700;margin-bottom:0.4rem;letter-spacing:-0.1px;}
+.prob-card p{font-size:13px;color:var(--muted);line-height:1.58;}
+.prob-card-accent{background:rgba(37,99,235,0.07) !important;border-left:3px solid var(--blue);}
+
+/* SERVICES */
+.svc-section{background:linear-gradient(180deg,var(--ink2),var(--ink));border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.svc-section .s-tag,.svc-section .s-sub{color:rgba(255,255,255,0.68);}
+.svc-section .s-tag::before{background:var(--cyan);}
+.svc-section .s-h{color:var(--white);}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-bottom:2.5rem;}
+.svc-card{
+  background:rgba(255,255,255,0.03);padding:2.25rem;
+  transition:background 0.25s,transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;cursor:default;
+}
+.svc-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.2);}
+.svc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;}
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:1px;}
+.svc-arr{color:var(--blue2);opacity:0;transform:translateX(-5px);transition:all 0.25s;font-size:18px;line-height:1;}
+.svc-card:hover .svc-arr{opacity:1;transform:translateX(0);}
+.svc-card h3{font-size:17px;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.2px;color:var(--white);}
+.svc-card p{font-size:13px;color:rgba(255,255,255,0.68);line-height:1.62;}
+.svc-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;}
+.svc-card:hover::after{transform:scaleY(1);}
+
+/* PROCESS */
+.proc-layout{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:5.5rem;align-items:start;}
+.proc-steps{display:flex;flex-direction:column;}
+.proc-step{
+  display:grid;grid-template-columns:52px 1fr;gap:1.25rem;
+  padding:1.75rem 0;border-bottom:1px solid var(--border);
+  position:relative;
+}
+.proc-step:last-child{border-bottom:none;}
+.proc-step::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blue),transparent);transform:scaleY(0);transform-origin:top;transition:transform 0.4s ease;}
+.proc-step:hover::before{transform:scaleY(1);}
+.ps-n{font-family:'Instrument Serif',serif;font-size:2.5rem;color:rgba(59,130,246,0.14);line-height:1;transition:color 0.3s;}
+.proc-step:hover .ps-n{color:rgba(59,130,246,0.4);}
+.ps-body h3{font-size:16px;font-weight:700;margin-bottom:0.4rem;letter-spacing:-0.1px;}
+.ps-body p{font-size:13px;color:var(--muted);line-height:1.62;}
+.proc-cta-box{
+  background:rgba(255,255,255,0.96);border:1px solid var(--border2);
+  border-radius:12px;padding:2.5rem;position:sticky;top:90px;
+  box-shadow:0 20px 55px rgba(15,27,51,0.12);
+}
+.pcta-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
+.pcta-h{font-family:'Instrument Serif',serif;font-size:1.8rem;line-height:1.18;letter-spacing:-0.5px;margin-bottom:0.75rem;}
+.pcta-sub{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:1.5rem;}
+.pcta-feats{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem;}
+.pcta-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);}
+.feat-dot{width:6px;height:6px;background:var(--blue2);border-radius:50%;flex-shrink:0;margin-top:5px;}
+
+/* TESTIMONIALS */
+.test-wrap{background:linear-gradient(180deg,var(--navy2),#e8f0ff);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.test-card{
+  background:var(--navy);border:1px solid var(--border);border-radius:10px;
+  padding:1.75rem;transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s;
+  box-shadow:0 12px 32px rgba(15,27,51,0.06);
+}
+.test-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 18px 40px rgba(15,27,51,0.1);}
+.test-stars{color:#fbbf24;font-size:13px;letter-spacing:2px;margin-bottom:1rem;}
+.test-q{font-family:'Instrument Serif',serif;font-size:16px;font-style:italic;line-height:1.58;color:var(--text);margin-bottom:1.25rem;}
+.test-author{display:flex;align-items:center;gap:10px;}
+.test-avatar{width:36px;height:36px;border-radius:50%;background:rgba(37,99,235,0.22);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--blue3);flex-shrink:0;}
+.test-name{font-size:13px;font-weight:700;color:var(--text);}
+.test-role{font-size:11px;color:var(--dim);}
+
+/* FINAL CTA */
+.final-cta{padding:6.5rem 3rem;background:linear-gradient(135deg,var(--ink),var(--ink3));text-align:center;position:relative;overflow:hidden;}
+.final-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,0.1),transparent 70%);pointer-events:none;}
+.final-cta .s-tag{justify-content:center;}
+.final-cta .s-tag::before{display:none;}
+.final-h{font-family:'Instrument Serif',serif;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-1px;margin-bottom:1rem;color:var(--white);}
+.final-h em{font-style:italic;color:var(--blue3);}
+.final-sub{font-size:1rem;color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 2.5rem;line-height:1.78;}
+.final-form{
+  max-width:480px;margin:0 auto;
+  background:rgba(255,255,255,0.98);border:1px solid var(--border2);
+  border-radius:12px;padding:2.25rem;text-align:left;
+  position:relative;overflow:hidden;
+  box-shadow:0 24px 60px rgba(37,99,235,0.08);
+}
+.final-form::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));}
+.ff-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;}
+.ff-title{font-size:18px;font-weight:800;margin-bottom:1.5rem;letter-spacing:-0.3px;}
+.ff-row{margin-bottom:0.9rem;}
+.ff-row label{display:block;font-size:11px;font-weight:700;color:var(--dim);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;}
+.ff-row input,.ff-row select,.ff-row textarea{
+  width:100%;padding:11px 14px;
+  background:rgba(37,99,235,0.04);
+  border:1px solid var(--border);border-radius:6px;
+  font-size:14px;font-family:'Syne',sans-serif;
+  color:var(--text);outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  -webkit-appearance:none;appearance:none;
+}
+.ff-row input::placeholder,.ff-row textarea::placeholder{color:var(--dim);}
+.ff-row select{color:var(--muted);}
+.ff-row input:focus,.ff-row select:focus,.ff-row textarea:focus{border-color:var(--blue2);background:rgba(37,99,235,0.07);}
+.ff-row select option{background:#ffffff;color:var(--text);}
+.ff-row textarea{resize:none;height:82px;line-height:1.5;}
+.ff-btn{
+  width:100%;padding:14px;background:var(--blue);color:var(--white);
+  border:none;border-radius:6px;font-family:'Syne',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s;
+  letter-spacing:0.3px;margin-top:0.25rem;
+}
+.ff-btn:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,0.4);}
+.ff-note{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;margin-top:0.75rem;letter-spacing:0.3px;}
+.success-box{display:none;text-align:center;padding:1.5rem 0;opacity:0;transform:translateY(12px);transition:opacity 0.35s ease,transform 0.35s ease;}
+.success-box.visible{opacity:1;transform:translateY(0);}
+.form-fade-out{opacity:0;transform:translateY(-10px);transition:opacity 0.3s ease,transform 0.3s ease;}
+.form-shell{transition:opacity 0.3s ease,transform 0.3s ease;}
+.success-ring{width:58px;height:58px;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;background:rgba(37,99,235,0.1);}
+.success-box h3{font-size:20px;font-weight:800;margin-bottom:0.5rem;}
+.success-box p{font-size:14px;color:var(--muted);}
+
+/* FOOTER */
+.footer{
+  background:var(--ink);border-top:1px solid var(--border);
+  padding:2.25rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.foot-logo{display:flex;align-items:center;gap:10px;}
+.foot-logo img{height:34px;width:34px;object-fit:contain;filter:drop-shadow(0 0 7px rgba(59,130,246,0.5));}
+.foot-brand{font-size:15px;font-weight:800;color:var(--white);}
+.foot-brand span{color:var(--blue2);}
+.foot-links{display:flex;gap:2rem;}
+.foot-links a{font-size:13px;color:rgba(255,255,255,0.58);text-decoration:none;transition:color 0.2s;}
+.foot-links a:hover{color:rgba(255,255,255,0.82);}
+.foot-copy{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.46);letter-spacing:0.5px;}
+
+/* HERO SCANLINE */
+.hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),var(--blue),transparent);
+  animation:scan 4s ease-in-out infinite;z-index:1;
+}
+@keyframes scan{0%,100%{opacity:0.35;}50%{opacity:1;}}
+
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.revealed{opacity:1;transform:none;}
+.reveal-d1{transition-delay:0.1s;}
+.reveal-d2{transition-delay:0.2s;}
+.reveal-d3{transition-delay:0.3s;}
+
+/* STAGGERED CARD REVEALS */
+.prob-grid .prob-card,
+.svc-grid .svc-card,
+.test-grid .test-card{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.55s ease,transform 0.55s ease,box-shadow 0.25s ease,background 0.25s ease,border-color 0.25s ease;
+}
+.prob-grid.revealed .prob-card,
+.svc-grid.revealed .svc-card,
+.test-grid.revealed .test-card{
+  opacity:1;
+  transform:translateY(0);
+}
+.prob-grid.revealed .prob-card:nth-child(1),
+.svc-grid.revealed .svc-card:nth-child(1),
+.test-grid.revealed .test-card:nth-child(1){transition-delay:0.04s;}
+.prob-grid.revealed .prob-card:nth-child(2),
+.svc-grid.revealed .svc-card:nth-child(2),
+.test-grid.revealed .test-card:nth-child(2){transition-delay:0.1s;}
+.prob-grid.revealed .prob-card:nth-child(3),
+.svc-grid.revealed .svc-card:nth-child(3),
+.test-grid.revealed .test-card:nth-child(3){transition-delay:0.16s;}
+.prob-grid.revealed .prob-card:nth-child(4),
+.svc-grid.revealed .svc-card:nth-child(4),
+.test-grid.revealed .test-card:nth-child(4){transition-delay:0.22s;}
+.prob-grid.revealed .prob-card:nth-child(5),
+.svc-grid.revealed .svc-card:nth-child(5),
+.test-grid.revealed .test-card:nth-child(5){transition-delay:0.28s;}
+.prob-grid.revealed .prob-card:nth-child(6),
+.svc-grid.revealed .svc-card:nth-child(6),
+.test-grid.revealed .test-card:nth-child(6){transition-delay:0.34s;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .nav{padding:0 2rem;}
+  .hero,.section,.stats-band,.final-cta,.footer{padding-left:2rem;padding-right:2rem;}
+  .hero-inner{gap:2.75rem;grid-template-columns:minmax(0,1fr) minmax(300px,380px);}
+  .proc-layout{gap:2.75rem;}
+}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-form-card{display:block;max-width:560px;margin:0 auto;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .prob-grid,.svc-grid,.test-grid{grid-template-columns:1fr;}
+  .proc-layout{grid-template-columns:1fr;}
+  .proc-cta-box{position:static;}
+  .nav-links .nav-ghost{display:none;}
+  .section,.hero,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1.5rem;padding-right:1.5rem;}
+  .nav{padding:0 1.5rem;}
+  .hero{padding-top:4.5rem;padding-bottom:3.5rem;}
+  .hero-left{text-align:center;}
+  .hero-sub{max-width:none;}
+  .hero-ctas{justify-content:center;margin-bottom:2rem;}
+  .hero-tag{margin-left:auto;margin-right:auto;}
+  .s-sub{max-width:none;}
+  .proc-steps{order:2;}
+  .proc-cta-box{order:1;margin-bottom:1.5rem;}
+  .footer{justify-content:center;text-align:center;}
+  .foot-links{justify-content:center;flex-wrap:wrap;}
+}
+@media(max-width:700px){
+  #cursor,#cursor-ring{display:none;}
+  .stats-inner{grid-template-columns:1fr;}
+  .test-grid{gap:1rem;}
+  .nav{height:auto;min-height:68px;padding-top:0.9rem;padding-bottom:0.9rem;align-items:flex-start;gap:1rem;}
+  .nav-links{margin-left:auto;}
+  .hero h1{font-size:clamp(2.15rem,10vw,3rem);line-height:1.04;}
+  .final-h,.s-h{line-height:1.04;}
+  .ticker-item{padding:0 1.25rem;}
+}
+@media(max-width:600px){
+  .nav-links a:not(.nav-cta){display:none;}
+  .stat-box{padding:1.5rem 1.25rem;}
+  .nav{padding-left:1rem;padding-right:1rem;}
+  .nav-logo{gap:9px;min-width:0;}
+  .nav-logo img{height:34px;width:34px;}
+  .nav-brand{font-size:15px;}
+  .nav-cta{padding:10px 14px;font-size:12px;text-align:center;}
+  .hero,.section,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1rem;padding-right:1rem;}
+  .hero{padding-top:3.75rem;padding-bottom:3rem;}
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:0.75rem;}
+  .btn-primary,.btn-outline{width:100%;justify-content:center;}
+  .hero-form-card,.proc-cta-box,.final-form{padding:1.4rem;}
+  .prob-card,.svc-card,.test-card,.stat-box{padding:1.35rem;}
+  .proc-step{grid-template-columns:42px 1fr;gap:0.9rem;padding:1.35rem 0;}
+  .ps-n{font-size:2rem;}
+  .pcta-h{font-size:1.55rem;}
+  .ff-row textarea{height:110px;}
+  .foot-links{gap:1rem 1.25rem;}
+}
+@media(max-width:420px){
+  .nav{gap:0.75rem;}
+  .nav-brand{font-size:14px;}
+  .hero-tag,.hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
+  .stat-n{font-size:2.25rem;}
+  .test-q{font-size:15px;}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="logosmall.png" alt="Busy Bot Labs logo">
+    <div class="nav-brand">Busy Bot <span>Labs</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#services" class="nav-ghost">Services</a>
+    <a href="#process" class="nav-ghost">How it works</a>
+    <a href="#testimonials" class="nav-ghost">Results</a>
+    <a href="#contact" class="nav-cta">Book a free call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <!-- LEFT: HEADLINE + SOCIAL PROOF -->
+    <div class="hero-left">
+      <div class="hero-tag"><div class="pulse"></div>For growing businesses</div>
+      <h1>Stop running your business<br>on <em>memory and chaos.</em></h1>
+      <p class="hero-sub">Busy Bot Labs builds the documentation, workflows, and knowledge systems that let your team operate consistently, without you having to repeat yourself every day.</p>
+      <div class="hero-ctas">
+        <a href="#hero-form" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Get a free system audit
+        </a>
+        <a href="#services" class="btn-outline">See what we build</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: HERO LEAD FORM -->
+    <div class="hero-form-card" id="hero-form">
+      <div class="hfc-sublabel">Free discovery call</div>
+      <div class="hfc-title">Get your free ops audit</div>
+      <div class="hfc-desc">We'll identify your 3 biggest system gaps, no strings attached.</div>
+      <div id="hfc-fields">
+        <div class="hf-row">
+          <label>Your name</label>
+          <input type="text" id="h-name" placeholder="Jane Smith">
+        </div>
+        <div class="hf-row">
+          <label>Work email</label>
+          <input type="email" id="h-email" placeholder="jane@company.com">
+        </div>
+        <div class="hf-row">
+          <label>Team size</label>
+          <select id="h-size">
+            <option value="">Select team size...</option>
+            <option>Just me (solo)</option>
+            <option>2–10 people</option>
+            <option>11–50 people</option>
+            <option>50+ people</option>
+          </select>
+        </div>
+        <div class="hf-row">
+          <label>Biggest pain right now</label>
+          <select id="h-pain">
+            <option value="">Select one...</option>
+            <option>Onboarding takes too long</option>
+            <option>Knowledge lives in people's heads</option>
+            <option>No consistent processes</option>
+            <option>Can't delegate without things breaking</option>
+            <option>All of the above</option>
+          </select>
+        </div>
+        <button class="hfc-btn" onclick="submitHeroForm()">Claim my free audit →</button>
+        <div class="hfc-note">No credit card. No commitment. Just clarity.</div>
+        <div class="hfc-checks">
+          <div class="hfc-check">
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Response within 1 business day
+          </div>
+          <div class="hfc-check">
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            30-minute call, zero pressure
+          </div>
+          <div class="hfc-check">
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            First deliverable within 48hrs of kickoff
+          </div>
+        </div>
+      </div>
+      <div class="success-box" id="hfc-success">
+        <div class="success-ring"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polyline points="4,11 9,16 18,6" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>You're booked.</h3>
+        <p style="color:var(--muted);font-size:14px;margin-top:0.4rem;">Check your email. We'll confirm your call within one business day.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="ticker-sep"></div>SOP Development</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Workflow Design</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Knowledge Base Architecture</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Onboarding Systems</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Process Mapping</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Internal Tools</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Role-Based Training</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Documentation Support</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>SOP Development</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Workflow Design</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Knowledge Base Architecture</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Onboarding Systems</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Process Mapping</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Internal Tools</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Role-Based Training</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Documentation Support</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-box">
+      <div class="stat-n"><span id="c1">0</span><span style="color:var(--blue3);">x</span></div>
+      <div class="stat-l">Faster onboarding<br>after our systems</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n"><span id="c2">0</span><span style="color:var(--blue3);">%</span></div>
+      <div class="stat-l">Drop in repeated<br>manager questions</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n"><span id="c3">0</span><span style="color:var(--blue3);">+</span></div>
+      <div class="stat-l">Businesses with<br>better operations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n"><span id="c4">0</span><span style="color:var(--blue3);">h</span></div>
+      <div class="stat-l">First system<br>delivered post-kickoff</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+  <div class="s-inner">
+    <div class="s-tag reveal">The problem</div>
+    <h2 class="s-h reveal">Your team is doing great work.<br><em>Your systems are holding them back.</em></h2>
+    <p class="s-sub reveal">Most growing businesses run on institutional memory, knowledge in people's heads, scattered across Slack, locked in one manager's brain. When you grow, that breaks.</p>
+    <div class="prob-grid reveal">
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#3b82f6" stroke-width="1.2"/><polyline points="9,4.5 9,9 12,11" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Onboarding is painfully slow</h4>
+        <p>Every new hire needs weeks of hand-holding because nothing is written down anywhere.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3" stroke="#3b82f6" stroke-width="1.2"/><path d="M3.5 15c0-3.038 2.462-5.5 5.5-5.5s5.5 2.462 5.5 5.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <h4>You're the bottleneck</h4>
+        <p>Everything routes through you because you're the only one who knows how things work.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9A6 6 0 1 1 9 3" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><polyline points="15,3 15,7 11,7" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>The same mistakes keep happening</h4>
+        <p>Without documented processes, your team makes the same errors in different weeks and months.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="2" stroke="#3b82f6" stroke-width="1.2"/><line x1="5" y1="6.5" x2="13" y2="6.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="9" x2="13" y2="9" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="11.5" x2="9" y2="11.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <h4>Quality is inconsistent</h4>
+        <p>Two people doing the same job produce different results because there's no shared standard.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5.5h12M3 9h8M3 12.5h5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="12.5" r="2.5" stroke="#3b82f6" stroke-width="1.2"/></svg></div>
+        <h4>Info is impossible to find</h4>
+        <p>Processes are buried in email threads, old Slack messages, or someone's desktop from 2021.</p>
+      </div>
+      <div class="prob-card prob-card-accent">
+        <div class="pi" style="background:rgba(37,99,235,0.18);border-color:var(--blue2);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="3,13 7,6 11,10 15,4" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4 style="color:var(--blue3);">Sound familiar?</h4>
+        <p>These are fixable. We've solved all of them, and we can do it for you in weeks, not months.</p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:1.1rem;font-size:12px;padding:10px 16px;display:inline-flex;">Let's fix this →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section svc-section" id="services">
+  <div class="s-inner">
+    <div class="s-tag reveal">What we build</div>
+    <h2 class="s-h reveal">Everything your<br>operations need.</h2>
+    <p class="s-sub reveal">Six core services, one unified goal: a business that runs clearly without you micromanaging every detail.</p>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">01</div><div class="svc-arr">→</div></div>
+        <h3>Documentation Systems</h3>
+        <p>SOPs, role guides, and process documentation that captures exactly how your business runs, written to be actually read and used, not filed away and forgotten.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">02</div><div class="svc-arr">→</div></div>
+        <h3>Workflow Design</h3>
+        <p>End-to-end workflow maps so every team member knows what to do, when to escalate, and how to hand work off cleanly without dropping anything.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">03</div><div class="svc-arr">→</div></div>
+        <h3>Knowledge Bases</h3>
+        <p>A centralized, searchable home for everything your team needs to know, goodbye to "can you send me that doc again?" forever.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">04</div><div class="svc-arr">→</div></div>
+        <h3>Training & Onboarding</h3>
+        <p>Role-specific onboarding systems that turn a week of hand-holding into a self-serve ramp that actually gets people productive fast.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">05</div><div class="svc-arr">→</div></div>
+        <h3>Process Mapping</h3>
+        <p>Visual, step-by-step operational maps that expose inefficiencies and give your whole team a shared view of how work really flows.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-num">06</div><div class="svc-arr">→</div></div>
+        <h3>Internal Tools</h3>
+        <p>Lightweight tools built on top of your new structure, making information faster to access and reducing daily operational friction.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="#contact" class="btn-primary" style="display:inline-flex;">Book a free discovery call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="s-inner">
+    <div class="s-tag reveal">How it works</div>
+    <h2 class="s-h reveal" style="margin-bottom:3rem;">From chaos to clarity<br>in <em>four steps.</em></h2>
+    <div class="proc-layout">
+      <div class="proc-steps reveal">
+        <div class="proc-step">
+          <div class="ps-n">01</div>
+          <div class="ps-body">
+            <h3>Discover</h3>
+            <p>We listen first. We learn how your business actually operates: the friction, the gaps, and what your team needs most. No assumptions, no templates bolted on from the outside.</p>
+          </div>
+        </div>
+        <div class="proc-step">
+          <div class="ps-n">02</div>
+          <div class="ps-body">
+            <h3>Organize</h3>
+            <p>We map your operational knowledge into a clear architecture, with workflows structured, processes named, and logic made visible and repeatable for everyone on your team.</p>
+          </div>
+        </div>
+        <div class="proc-step">
+          <div class="ps-n">03</div>
+          <div class="ps-body">
+            <h3>Build</h3>
+            <p>We deliver your documentation, onboarding systems, and knowledge infrastructure, designed for actual daily use from day one, not a filing cabinet that gathers dust.</p>
+          </div>
+        </div>
+        <div class="proc-step">
+          <div class="ps-n">04</div>
+          <div class="ps-body">
+            <h3>Support</h3>
+            <p>As your team grows and evolves, we keep your systems current, accurate, and matched to how work actually happens now, not how it worked 6 months ago.</p>
+          </div>
+        </div>
+      </div>
+      <div class="proc-cta-box reveal">
+        <div class="pcta-label">Ready to start?</div>
+        <div class="pcta-h">Get your free ops audit, no strings attached.</div>
+        <div class="pcta-sub">In 30 minutes, we'll tell you exactly where your biggest operational gaps are and how to fix them. Whether you work with us or not.</div>
+        <div class="pcta-feats">
+          <div class="pcta-feat"><div class="feat-dot"></div>Review your current documentation setup</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>Identify your top 3 operational bottlenecks</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>Give you a prioritized action plan to fix them</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>No pitch, no pressure, just useful insight</div>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:flex;justify-content:center;text-align:center;">Claim my free audit →</a>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;margin-top:0.75rem;letter-spacing:0.3px;">30 min · Free · Zero commitment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section test-wrap" id="testimonials">
+  <div class="s-inner">
+    <div class="s-tag reveal">What clients say</div>
+    <h2 class="s-h reveal">Real results from<br>real businesses.</h2>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">"We cut our onboarding time in half. New hires are actually self-sufficient in their first week now. I can't believe we operated without this."</div>
+        <div class="test-author">
+          <div class="test-avatar">JT</div>
+          <div>
+            <div class="test-name">Jordan T.</div>
+            <div class="test-role">Ops Director, 28-person agency</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">"I was the bottleneck for everything. After Busy Bot built our knowledge base, my team stopped asking me the same questions every single week."</div>
+        <div class="test-author">
+          <div class="test-avatar">AM</div>
+          <div>
+            <div class="test-name">Aisha M.</div>
+            <div class="test-role">Founder, e-commerce brand</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">"The process mapping alone was worth every penny. We could finally see where the inefficiencies were hiding, and actually fix them for good."</div>
+        <div class="test-author">
+          <div class="test-avatar">SK</div>
+          <div>
+            <div class="test-name">Sam K.</div>
+            <div class="test-role">CEO, SaaS startup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="final-glow"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="s-tag" style="justify-content:center;"><span style="width:24px;height:1px;background:var(--cyan);display:block;"></span>Book your free call</div>
+    <h2 class="final-h">Your team deserves<br><em>systems that work.</em></h2>
+    <p class="final-sub">Stop repeating yourself. Stop firefighting. Book a free 30-minute call and we'll show you exactly what's possible for your business.</p>
+    <div class="final-form">
+      <div class="ff-label">Free discovery call</div>
+      <div class="ff-title">Book your free ops audit</div>
+      <div id="ff-fields">
+        <div class="ff-row"><label>Name</label><input type="text" id="f-name" placeholder="Jane Smith"></div>
+        <div class="ff-row"><label>Work email</label><input type="email" id="f-email" placeholder="jane@company.com"></div>
+        <div class="ff-row"><label>Company</label><input type="text" id="f-co" placeholder="Your company name"></div>
+        <div class="ff-row">
+          <label>Biggest challenge</label>
+          <select id="f-ch">
+            <option value="">Select one...</option>
+            <option>Onboarding takes too long</option>
+            <option>Knowledge lives in people's heads</option>
+            <option>No consistent processes</option>
+            <option>Can't delegate without things breaking</option>
+            <option>All of the above</option>
+          </select>
+        </div>
+        <div class="ff-row"><label>Anything else? (optional)</label><textarea id="f-note" placeholder="Tell us more about your situation..."></textarea></div>
+        <button class="ff-btn" onclick="submitFinalForm()">Book my free call →</button>
+        <div class="ff-note">We reply within 1 business day. Zero spam. Zero pressure.</div>
+      </div>
+      <div class="success-box" id="ff-success">
+        <div class="success-ring"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polyline points="4,11 9,16 18,6" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>You're in.</h3>
+        <p style="color:var(--muted);margin-top:0.4rem;">We'll be in touch within one business day to confirm your discovery call. Talk soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-logo">
+    <img src="logosmall.png" alt="Busy Bot Labs">
+    <div class="foot-brand">Busy Bot <span>Labs</span></div>
+  </div>
+  <div class="foot-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#testimonials">Results</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="foot-copy">© 2026 Busy Bot Labs · Building the structure behind better operations</div>
+</footer>
+
+<script>
+/* CUSTOM CURSOR */
+const cur=document.getElementById('cursor');
+const ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function loopRing(){
+  rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+  ring.style.left=Math.round(rx)+'px';ring.style.top=Math.round(ry)+'px';
+  requestAnimationFrame(loopRing);
+})();
+document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+});
+
+/* SCROLL REVEAL */
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* STAT COUNTERS */
+function animCount(el,target,dur){
+  let start=null;
+  const step=ts=>{
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    el.textContent=Math.round(p*target);
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  };
+  requestAnimationFrame(step);
+}
+const statObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animCount(document.getElementById('c1'),3,1200);
+      animCount(document.getElementById('c2'),85,1600);
+      animCount(document.getElementById('c3'),50,1800);
+      animCount(document.getElementById('c4'),48,1400);
+      statObs.disconnect();
+    }
+  });
+},{threshold:0.5});
+const sb=document.querySelector('.stats-band');
+if(sb)statObs.observe(sb);
+
+/* FORMSPREE CONFIG */
+const FORMSPREE_ENDPOINTS={
+  hero:'https://formspree.io/f/xbdpeqza',
+  final:'https://formspree.io/f/xbdpeqza'
+};
+
+function hasFormspreeEndpoint(url){
+  return typeof url==='string' && url.startsWith('https://formspree.io/f/');
+}
+
+function showAnimatedSuccess(fieldsId,successId){
+  const fields=document.getElementById(fieldsId);
+  const success=document.getElementById(successId);
+  fields.classList.add('form-fade-out');
+  setTimeout(()=>{
+    fields.style.display='none';
+    success.style.display='block';
+    requestAnimationFrame(()=>success.classList.add('visible'));
+  },280);
+}
+
+async function submitToFormspree({endpoint,button,loadingLabel,successFieldsId,successBoxId,payload,errorMessage}){
+  if(!hasFormspreeEndpoint(endpoint)){
+    alert('Add your real Formspree form endpoint in the script before using the forms.');
+    return;
+  }
+
+  if(!button.dataset.defaultLabel)button.dataset.defaultLabel=button.textContent.trim();
+  const formData=new FormData();
+  Object.entries(payload).forEach(([key,value])=>formData.append(key,value));
+
+  try{
+    button.disabled=true;
+    button.style.opacity='0.75';
+    button.style.cursor='wait';
+    button.textContent=loadingLabel;
+
+    const response=await fetch(endpoint,{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:formData
+    });
+
+    if(!response.ok){
+      let message=errorMessage;
+      try{
+        const data=await response.json();
+        if(data && Array.isArray(data.errors) && data.errors.length){
+          message=data.errors.map(error=>error.message).join(', ');
+        }
+      }catch(_err){}
+      throw new Error(message);
+    }
+
+    showAnimatedSuccess(successFieldsId,successBoxId);
+  }catch(err){
+    console.error('Formspree submit failed:',err);
+    alert(err.message || errorMessage);
+  }finally{
+    button.disabled=false;
+    button.style.opacity='1';
+    button.style.cursor='pointer';
+    button.textContent=button.dataset.defaultLabel;
+  }
+}
+
+/* HERO FORM */
+async function submitHeroForm(){
+  const n=document.getElementById('h-name').value.trim();
+  const e=document.getElementById('h-email').value.trim();
+  const s=document.getElementById('h-size').value;
+  const p=document.getElementById('h-pain').value;
+  const button=document.querySelector('.hfc-btn');
+  if(!n||!e||!s||!p){alert('Please fill in all fields to claim your audit.');return;}
+
+  await submitToFormspree({
+    endpoint:FORMSPREE_ENDPOINTS.hero,
+    button,
+    loadingLabel:'Sending...',
+    successFieldsId:'hfc-fields',
+    successBoxId:'hfc-success',
+    errorMessage:'We could not send your request right now. Please try again in a moment.',
+    payload:{
+      form_name:'Labs Leads',
+      form_type:'Hero Form',
+      name:n,
+      email:e,
+      team_size:s,
+      biggest_pain:p
+    }
+  });
+}
+
+/* FINAL FORM */
+async function submitFinalForm(){
+  const n=document.getElementById('f-name').value.trim();
+  const e=document.getElementById('f-email').value.trim();
+  const c=document.getElementById('f-co').value.trim();
+  const ch=document.getElementById('f-ch').value;
+  const note=document.getElementById('f-note').value.trim();
+  const button=document.querySelector('.ff-btn');
+  if(!n||!e||!c||!ch){alert('Please fill in all required fields.');return;}
+
+  await submitToFormspree({
+    endpoint:FORMSPREE_ENDPOINTS.final,
+    button,
+    loadingLabel:'Sending...',
+    successFieldsId:'ff-fields',
+    successBoxId:'ff-success',
+    errorMessage:'We could not send your booking request right now. Please try again in a moment.',
+    payload:{
+      form_name:'Labs Leads',
+      form_type:'Final Form',
+      name:n,
+      email:e,
+      company:c,
+      biggest_challenge:ch,
+      note
+    }
+  });
+}
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
