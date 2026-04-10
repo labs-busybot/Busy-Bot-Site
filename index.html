@@ -85,16 +85,73 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   mask-image:radial-gradient(ellipse 70% 100% at 80% 50%,black,transparent);
 }
 .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:4.5rem;align-items:center;position:relative;z-index:1;}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:9px;
-  background:rgba(34,211,238,0.09);border:1px solid rgba(34,211,238,0.22);
-  color:var(--cyan);font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
-  padding:6px 14px;border-radius:100px;margin-bottom:1.75rem;
-  display:inline-flex;
+.hero-left{position:relative;}
+.bot-link{display:block;color:inherit;text-decoration:none;}
+.bot-link:focus-visible{outline:2px solid var(--blue2);outline-offset:6px;border-radius:24px;}
+.hero-bot{
+  position:relative;
+  width:240px;
+  height:150px;
+  margin:0 0 1.5rem;
+  cursor:pointer;
 }
-.pulse{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 1.8s ease-in-out infinite;flex-shrink:0;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
+.hero-bot-note{
+  position:absolute;
+  right:70px;
+  top:0;
+  max-width:170px;
+  padding:0.85rem 0.95rem;
+  border-radius:22px;
+  background:rgba(255,255,255,0.82);
+  border:1px solid rgba(37,99,235,0.14);
+  box-shadow:0 16px 36px rgba(15,27,51,0.1);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  animation:thoughtFloat 5.2s ease-in-out infinite;
+}
+.hero-bot-note::before,
+.hero-bot-note::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.82);
+  border:1px solid rgba(37,99,235,0.14);
+  box-shadow:0 10px 24px rgba(15,27,51,0.08);
+}
+.hero-bot-note::before{
+  width:16px;height:16px;right:18px;bottom:-12px;
+  animation:thoughtDotOne 5.2s ease-in-out infinite;
+}
+.hero-bot-note::after{
+  width:9px;height:9px;right:6px;bottom:-20px;
+  animation:thoughtDotTwo 5.2s ease-in-out infinite;
+}
+.hero-bot-label{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--blue2);margin-bottom:0.25rem;
+}
+.hero-bot-text{font-size:12px;line-height:1.5;color:var(--text);}
+.hero-bot-mark{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:92px;height:92px;
+  display:grid;place-items:center;
+}
+.hero-bot-mark::before{
+  content:'';
+  position:absolute;inset:6px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,0.18),rgba(59,130,246,0.08) 55%,transparent 72%);
+  filter:blur(1px);
+}
+.hero-bot-mark img{
+  position:relative;
+  width:74px;height:74px;object-fit:contain;
+  filter:drop-shadow(0 12px 24px rgba(37,99,235,0.18));
+  animation:botBuzz 6.2s ease-in-out infinite;
+}
 .hero h1{
   font-family:'Instrument Serif',serif;
   font-size:clamp(2.6rem,4.5vw,4rem);
@@ -220,6 +277,73 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 .svc-section .s-tag,.svc-section .s-sub{color:rgba(255,255,255,0.68);}
 .svc-section .s-tag::before{background:var(--cyan);}
 .svc-section .s-h{color:var(--white);}
+.svc-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;
+  margin-bottom:2.75rem;
+}
+.svc-copy{max-width:560px;}
+.svc-bot{
+  position:relative;
+  width:240px;
+  height:150px;
+  flex-shrink:0;
+  cursor:pointer;
+}
+.svc-bot-note{
+  position:absolute;
+  right:70px;
+  top:0;
+  max-width:170px;
+  padding:0.85rem 0.95rem;
+  border-radius:22px;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 16px 36px rgba(0,0,0,0.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  animation:thoughtFloat 5.2s ease-in-out infinite;
+}
+.svc-bot-note::before,
+.svc-bot-note::after{
+  content:'';
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 10px 24px rgba(0,0,0,0.1);
+}
+.svc-bot-note::before{
+  width:16px;height:16px;right:18px;bottom:-12px;
+  animation:thoughtDotOne 5.2s ease-in-out infinite;
+}
+.svc-bot-note::after{
+  width:9px;height:9px;right:6px;bottom:-20px;
+  animation:thoughtDotTwo 5.2s ease-in-out infinite;
+}
+.svc-bot-label{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.58);
+  margin-bottom:0.3rem;
+}
+.svc-bot-text{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.88);}
+.svc-bot-mark{
+  position:absolute;right:0;bottom:0;
+  width:92px;height:92px;
+  display:grid;place-items:center;
+}
+.svc-bot-mark::before{
+  content:'';
+  position:absolute;inset:6px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,0.2),rgba(59,130,246,0.08) 55%,transparent 72%);
+  filter:blur(1px);
+}
+.svc-bot-mark img{
+  position:relative;
+  width:74px;height:74px;object-fit:contain;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.18));
+  animation:botBuzz 6.2s ease-in-out infinite;
+}
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-bottom:2.5rem;}
 .svc-card{
   background:rgba(255,255,255,0.03);padding:2.25rem;
@@ -262,6 +386,54 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 .pcta-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);}
 .feat-dot{width:6px;height:6px;background:var(--blue2);border-radius:50%;flex-shrink:0;margin-top:5px;}
 
+/* FAQ */
+.faq-section{background:linear-gradient(180deg,#f8fbff,var(--navy2));border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.faq-wrap{max-width:860px;margin:0 auto;}
+.faq-list{display:flex;flex-direction:column;gap:0.9rem;}
+.faq-item{
+  background:rgba(255,255,255,0.88);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 12px 32px rgba(15,27,51,0.06);
+  transition:border-color 0.25s ease,box-shadow 0.25s ease,transform 0.25s ease;
+}
+.faq-item:hover{border-color:var(--border2);box-shadow:0 18px 40px rgba(15,27,51,0.1);transform:translateY(-2px);}
+.faq-item.open{border-color:var(--border2);box-shadow:0 18px 40px rgba(15,27,51,0.12);}
+.faq-question{
+  width:100%;
+  border:none;
+  background:transparent;
+  padding:1.2rem 1.35rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  text-align:left;
+  font-family:'Syne',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--text);
+  cursor:pointer;
+}
+.faq-question span{flex:1;}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--blue2);flex-shrink:0;
+  transition:transform 0.25s ease,background 0.25s ease;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(37,99,235,0.08);}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.32s ease,padding 0.32s ease;
+  padding:0 1.35rem;
+}
+.faq-item.open .faq-answer{padding:0 1.35rem 1.2rem;max-height:220px;}
+.faq-answer p{font-size:14px;color:var(--muted);line-height:1.7;max-width:680px;}
+
 /* TESTIMONIALS */
 .test-wrap{background:linear-gradient(180deg,var(--navy2),#e8f0ff);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
@@ -281,6 +453,93 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 /* FINAL CTA */
 .final-cta{padding:6.5rem 3rem;background:linear-gradient(135deg,var(--ink),var(--ink3));text-align:center;position:relative;overflow:hidden;}
 .final-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,0.1),transparent 70%);pointer-events:none;}
+.final-bot{
+  position:absolute;
+  right:clamp(1.25rem,6vw,4.5rem);
+  bottom:1.25rem;
+  width:240px;
+  height:150px;
+  z-index:0;
+  cursor:pointer;
+}
+.final-bot-note{
+  position:absolute;
+  right:70px;
+  bottom:78px;
+  max-width:170px;
+  padding:0.85rem 0.95rem;
+  border-radius:22px;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 16px 36px rgba(0,0,0,0.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  animation:thoughtFloat 5.2s ease-in-out infinite;
+}
+.final-bot-note::before,
+.final-bot-note::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 10px 24px rgba(0,0,0,0.1);
+}
+.final-bot-note::before{
+  width:16px;height:16px;right:18px;bottom:-12px;
+  animation:thoughtDotOne 5.2s ease-in-out infinite;
+}
+.final-bot-note::after{
+  width:9px;height:9px;right:6px;bottom:-20px;
+  animation:thoughtDotTwo 5.2s ease-in-out infinite;
+}
+.final-bot-label{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.58);
+  margin-bottom:0.3rem;
+}
+.final-bot-text{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.88);}
+.final-bot-mark{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:92px;height:92px;
+  display:grid;place-items:center;
+}
+.final-bot-mark::before{
+  content:'';
+  position:absolute;inset:6px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,0.2),rgba(59,130,246,0.08) 55%,transparent 72%);
+  filter:blur(1px);
+}
+.final-bot-mark img{
+  position:relative;
+  width:74px;height:74px;object-fit:contain;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.18));
+  animation:botBuzz 6.2s ease-in-out infinite;
+}
+@keyframes botBuzz{
+  0%,100%{transform:translate3d(0,0,0) rotate(-4deg);}
+  15%{transform:translate3d(8px,-4px,0) rotate(2deg);}
+  30%{transform:translate3d(-4px,-10px,0) rotate(-1deg);}
+  45%{transform:translate3d(10px,-2px,0) rotate(4deg);}
+  60%{transform:translate3d(-8px,6px,0) rotate(-3deg);}
+  75%{transform:translate3d(6px,10px,0) rotate(2deg);}
+}
+@keyframes thoughtFloat{
+  0%,100%{transform:translateY(0) scale(1);box-shadow:0 16px 36px rgba(0,0,0,0.16);}
+  50%{transform:translateY(-6px) scale(1.015);box-shadow:0 22px 42px rgba(0,0,0,0.18);}
+}
+@keyframes thoughtDotOne{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-3px) scale(1.08);}
+}
+@keyframes thoughtDotTwo{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-2px) scale(1.12);}
+}
 .final-cta .s-tag{justify-content:center;}
 .final-cta .s-tag::before{display:none;}
 .final-h{font-family:'Instrument Serif',serif;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-1px;margin-bottom:1rem;color:var(--white);}
@@ -412,12 +671,15 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   .hero-left{text-align:center;}
   .hero-sub{max-width:none;}
   .hero-ctas{justify-content:center;margin-bottom:2rem;}
-  .hero-tag{margin-left:auto;margin-right:auto;}
   .s-sub{max-width:none;}
+  .svc-head{flex-direction:column;align-items:flex-start;gap:1.5rem;}
   .proc-steps{order:2;}
   .proc-cta-box{order:1;margin-bottom:1.5rem;}
   .footer{justify-content:center;text-align:center;}
   .foot-links{justify-content:center;flex-wrap:wrap;}
+  .hero-bot,
+  .svc-bot,
+  .final-bot{display:none;}
 }
 @media(max-width:700px){
   #cursor,#cursor-ring{display:none;}
@@ -439,10 +701,17 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   .nav-cta{padding:10px 14px;font-size:12px;text-align:center;}
   .hero,.section,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1rem;padding-right:1rem;}
   .hero{padding-top:3.75rem;padding-bottom:3rem;}
+  .hero-bot{width:180px;height:120px;}
+  .hero-bot-note{right:54px;top:0;max-width:130px;padding:0.65rem 0.75rem;}
+  .hero-bot-text{font-size:11px;}
+  .hero-bot-mark{width:70px;height:70px;}
+  .hero-bot-mark img{width:54px;height:54px;}
   .hero-ctas{flex-direction:column;align-items:stretch;gap:0.75rem;}
   .btn-primary,.btn-outline{width:100%;justify-content:center;}
   .hero-form-card,.proc-cta-box,.final-form{padding:1.4rem;}
   .prob-card,.svc-card,.test-card,.stat-box{padding:1.35rem;}
+  .faq-question{padding:1rem 1rem;font-size:14px;}
+  .faq-answer,.faq-item.open .faq-answer{padding-left:1rem;padding-right:1rem;}
   .proc-step{grid-template-columns:42px 1fr;gap:0.9rem;padding:1.35rem 0;}
   .ps-n{font-size:2rem;}
   .pcta-h{font-size:1.55rem;}
@@ -452,9 +721,19 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 @media(max-width:420px){
   .nav{gap:0.75rem;}
   .nav-brand{font-size:14px;}
-  .hero-tag,.hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
+  .hero-bot-label,.hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
   .stat-n{font-size:2.25rem;}
   .test-q{font-size:15px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .svc-bot-note,
+  .svc-bot-note::before,
+  .svc-bot-note::after,
+  .svc-bot-mark img,
+  .final-bot-note,
+  .final-bot-note::before,
+  .final-bot-note::after,
+  .final-bot-mark img{animation:none;}
 }
 </style>
 </head>
@@ -472,7 +751,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   <div class="nav-links">
     <a href="#services" class="nav-ghost">Services</a>
     <a href="#process" class="nav-ghost">How it works</a>
-    <a href="#testimonials" class="nav-ghost">Results</a>
+    <!-- <a href="#testimonials" class="nav-ghost">Results</a> -->
     <a href="#contact" class="nav-cta">Book a free call</a>
   </div>
 </nav>
@@ -486,7 +765,17 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 
     <!-- LEFT: HEADLINE + SOCIAL PROOF -->
     <div class="hero-left">
-      <div class="hero-tag"><div class="pulse"></div>For growing businesses</div>
+      <a href="#contact" class="bot-link" aria-label="Go to the book your free call form">
+      <div class="hero-bot">
+        <div class="hero-bot-note">
+          <span class="hero-bot-label">Busy Bot</span>
+          <div class="hero-bot-text">Book your free call.</div>
+        </div>
+        <div class="hero-bot-mark">
+          <img src="logosmall.png" alt="">
+        </div>
+      </div>
+      </a>
       <h1>Stop running your business<br>on <em>memory and chaos.</em></h1>
       <p class="hero-sub">Busy Bot Labs builds the documentation, workflows, and knowledge systems that let your team operate consistently, without you having to repeat yourself every day.</p>
       <div class="hero-ctas">
@@ -595,11 +884,11 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
     </div>
     <div class="stat-box">
       <div class="stat-n"><span id="c3">0</span><span style="color:var(--blue3);">+</span></div>
-      <div class="stat-l">Businesses with<br>better operations</div>
+      <div class="stat-l">Hours saved per<br>month in admin time</div>
     </div>
     <div class="stat-box">
-      <div class="stat-n"><span id="c4">0</span><span style="color:var(--blue3);">h</span></div>
-      <div class="stat-l">First system<br>delivered post-kickoff</div>
+      <div class="stat-n"><span id="c4">0</span><span style="color:var(--blue3);">%</span></div>
+      <div class="stat-l">More consistency in<br>day-to-day execution</div>
     </div>
   </div>
 </div>
@@ -649,9 +938,24 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 <!-- SERVICES -->
 <section class="section svc-section" id="services">
   <div class="s-inner">
-    <div class="s-tag reveal">What we build</div>
-    <h2 class="s-h reveal">Everything your<br>operations need.</h2>
-    <p class="s-sub reveal">Six core services, one unified goal: a business that runs clearly without you micromanaging every detail.</p>
+    <div class="svc-head">
+      <div class="svc-copy">
+        <div class="s-tag reveal">What we build</div>
+        <h2 class="s-h reveal">Everything your<br>operations need.</h2>
+        <p class="s-sub reveal">Six core services, one unified goal: a business that runs clearly without you micromanaging every detail.</p>
+      </div>
+      <a href="#contact" class="bot-link reveal" aria-label="Go to the book your free call form">
+      <div class="svc-bot">
+        <div class="svc-bot-note">
+          <span class="svc-bot-label">Busy Bot</span>
+          <div class="svc-bot-text">Systems your team can actually use.</div>
+        </div>
+        <div class="svc-bot-mark">
+          <img src="logosmall.png" alt="">
+        </div>
+      </div>
+      </a>
+    </div>
     <div class="svc-grid reveal">
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">01</div><div class="svc-arr">→</div></div>
@@ -743,7 +1047,64 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="faq-wrap">
+    <div class="s-tag reveal">FAQ</div>
+    <h2 class="s-h reveal">Questions founders ask<br>before we start.</h2>
+    <p class="s-sub reveal">A few quick answers about how Busy Bot Labs works, what we build, and what happens after you book your call.</p>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-question" type="button" aria-expanded="true">
+          <span>What kinds of businesses do you work with?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>We work best with growing service businesses, agencies, consultancies, and operationally messy teams that already have demand but need structure behind the scenes. If your business depends too much on memory, Slack messages, or one key person, we can help.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Do you only write SOPs?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>No. SOPs are only one part of the work. We also design workflow maps, onboarding systems, internal knowledge bases, role guides, and the structure your team needs to actually use documentation day to day.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>How do you figure out what we need first?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>We start with a discovery call and a quick operational audit. That helps us spot the biggest bottlenecks, identify what is breaking most often, and prioritize the systems that will create the clearest immediate improvement.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Will this actually be customized to our business?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We do not drop generic templates into your business and call it done. Everything is shaped around how your team already works, where information gets stuck, and what level of detail your people need to use the systems confidently.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What happens after we book the free call?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>We review your current setup, talk through the friction points, and show you where the biggest gaps are. If it looks like a fit, we outline the next steps. If not, you still leave with a clearer picture of what your operations need.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
+<!--
 <section class="section test-wrap" id="testimonials">
   <div class="s-inner">
     <div class="s-tag reveal">What clients say</div>
@@ -785,10 +1146,20 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
     </div>
   </div>
 </section>
+-->
 
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="final-glow"></div>
+  <a href="#contact" class="bot-link final-bot" aria-label="Go to the book your free call form">
+    <div class="final-bot-note">
+      <span class="final-bot-label">Busy Bot</span>
+      <div class="final-bot-text">We reply within 1 business day.</div>
+    </div>
+    <div class="final-bot-mark">
+      <img src="logosmall.png" alt="">
+    </div>
+  </a>
   <div style="position:relative;z-index:1;">
     <div class="s-tag" style="justify-content:center;"><span style="width:24px;height:1px;background:var(--cyan);display:block;"></span>Book your free call</div>
     <h2 class="final-h">Your team deserves<br><em>systems that work.</em></h2>
@@ -863,6 +1234,23 @@ const revObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* FAQ ACCORDION */
+document.querySelectorAll('.faq-question').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const item=button.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(faqItem=>{
+      faqItem.classList.remove('open');
+      const faqButton=faqItem.querySelector('.faq-question');
+      if(faqButton)faqButton.setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      button.setAttribute('aria-expanded','true');
+    }
+  });
+});
 
 /* STAT COUNTERS */
 function animCount(el,target,dur){
