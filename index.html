@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Busy Bot Labs - Build Better Systems for Your Business</title>
-<meta name="description" content="Busy Bot Labs builds the documentation, workflows, and knowledge systems that let your team operate consistently, without you having to repeat yourself every day.">
+<title>Busy Bot Labs - Digital SOP Playbooks for Restaurants</title>
+<meta name="description" content="Busy Bot Labs builds custom digital SOP playbooks for independent restaurants, cafes, bakeries, bars, and small hospitality teams.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -86,72 +86,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 }
 .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:4.5rem;align-items:center;position:relative;z-index:1;}
 .hero-left{position:relative;}
-.bot-link{display:block;color:inherit;text-decoration:none;}
-.bot-link:focus-visible{outline:2px solid var(--blue2);outline-offset:6px;border-radius:24px;}
-.hero-bot{
-  position:relative;
-  width:240px;
-  height:150px;
-  margin:0 0 1.5rem;
-  cursor:pointer;
-}
-.hero-bot-note{
-  position:absolute;
-  right:70px;
-  top:0;
-  max-width:170px;
-  padding:0.85rem 0.95rem;
-  border-radius:22px;
-  background:rgba(255,255,255,0.82);
-  border:1px solid rgba(37,99,235,0.14);
-  box-shadow:0 16px 36px rgba(15,27,51,0.1);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  animation:thoughtFloat 5.2s ease-in-out infinite;
-}
-.hero-bot-note::before,
-.hero-bot-note::after{
-  content:'';
-  position:absolute;
-  border-radius:50%;
-  background:rgba(255,255,255,0.82);
-  border:1px solid rgba(37,99,235,0.14);
-  box-shadow:0 10px 24px rgba(15,27,51,0.08);
-}
-.hero-bot-note::before{
-  width:16px;height:16px;right:18px;bottom:-12px;
-  animation:thoughtDotOne 5.2s ease-in-out infinite;
-}
-.hero-bot-note::after{
-  width:9px;height:9px;right:6px;bottom:-20px;
-  animation:thoughtDotTwo 5.2s ease-in-out infinite;
-}
-.hero-bot-label{
-  display:block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
-  color:var(--blue2);margin-bottom:0.25rem;
-}
-.hero-bot-text{font-size:12px;line-height:1.5;color:var(--text);}
-.hero-bot-mark{
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:92px;height:92px;
-  display:grid;place-items:center;
-}
-.hero-bot-mark::before{
-  content:'';
-  position:absolute;inset:6px;border-radius:50%;
-  background:radial-gradient(circle,rgba(34,211,238,0.18),rgba(59,130,246,0.08) 55%,transparent 72%);
-  filter:blur(1px);
-}
-.hero-bot-mark img{
-  position:relative;
-  width:74px;height:74px;object-fit:contain;
-  filter:drop-shadow(0 12px 24px rgba(37,99,235,0.18));
-  animation:botBuzz 6.2s ease-in-out infinite;
-}
 .hero h1{
   font-family:'Instrument Serif',serif;
   font-size:clamp(2.6rem,4.5vw,4rem);
@@ -221,7 +155,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 .hfc-check{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
 .check-icon{width:16px;height:16px;background:rgba(34,211,238,0.1);border-radius:50%;border:1px solid rgba(34,211,238,0.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
-/* TICKER */
+/* LOCAL SIGNAL */
 .ticker{
   background:linear-gradient(90deg,var(--ink),var(--ink2));
   border-top:1px solid var(--border);border-bottom:1px solid var(--border);
@@ -282,68 +216,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   margin-bottom:2.75rem;
 }
 .svc-copy{max-width:560px;}
-.svc-bot{
-  position:relative;
-  width:240px;
-  height:150px;
-  flex-shrink:0;
-  cursor:pointer;
-}
-.svc-bot-note{
-  position:absolute;
-  right:70px;
-  top:0;
-  max-width:170px;
-  padding:0.85rem 0.95rem;
-  border-radius:22px;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow:0 16px 36px rgba(0,0,0,0.18);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  animation:thoughtFloat 5.2s ease-in-out infinite;
-}
-.svc-bot-note::before,
-.svc-bot-note::after{
-  content:'';
-  position:absolute;border-radius:50%;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow:0 10px 24px rgba(0,0,0,0.1);
-}
-.svc-bot-note::before{
-  width:16px;height:16px;right:18px;bottom:-12px;
-  animation:thoughtDotOne 5.2s ease-in-out infinite;
-}
-.svc-bot-note::after{
-  width:9px;height:9px;right:6px;bottom:-20px;
-  animation:thoughtDotTwo 5.2s ease-in-out infinite;
-}
-.svc-bot-label{
-  display:block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
-  color:rgba(255,255,255,0.58);
-  margin-bottom:0.3rem;
-}
-.svc-bot-text{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.88);}
-.svc-bot-mark{
-  position:absolute;right:0;bottom:0;
-  width:92px;height:92px;
-  display:grid;place-items:center;
-}
-.svc-bot-mark::before{
-  content:'';
-  position:absolute;inset:6px;border-radius:50%;
-  background:radial-gradient(circle,rgba(34,211,238,0.2),rgba(59,130,246,0.08) 55%,transparent 72%);
-  filter:blur(1px);
-}
-.svc-bot-mark img{
-  position:relative;
-  width:74px;height:74px;object-fit:contain;
-  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.18));
-  animation:botBuzz 6.2s ease-in-out infinite;
-}
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-bottom:2.5rem;}
 .svc-card{
   background:rgba(255,255,255,0.03);padding:2.25rem;
@@ -453,93 +325,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 /* FINAL CTA */
 .final-cta{padding:6.5rem 3rem;background:linear-gradient(135deg,var(--ink),var(--ink3));text-align:center;position:relative;overflow:hidden;}
 .final-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,0.1),transparent 70%);pointer-events:none;}
-.final-bot{
-  position:absolute;
-  right:clamp(1.25rem,6vw,4.5rem);
-  bottom:1.25rem;
-  width:240px;
-  height:150px;
-  z-index:0;
-  cursor:pointer;
-}
-.final-bot-note{
-  position:absolute;
-  right:70px;
-  bottom:78px;
-  max-width:170px;
-  padding:0.85rem 0.95rem;
-  border-radius:22px;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow:0 16px 36px rgba(0,0,0,0.18);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  animation:thoughtFloat 5.2s ease-in-out infinite;
-}
-.final-bot-note::before,
-.final-bot-note::after{
-  content:'';
-  position:absolute;
-  border-radius:50%;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow:0 10px 24px rgba(0,0,0,0.1);
-}
-.final-bot-note::before{
-  width:16px;height:16px;right:18px;bottom:-12px;
-  animation:thoughtDotOne 5.2s ease-in-out infinite;
-}
-.final-bot-note::after{
-  width:9px;height:9px;right:6px;bottom:-20px;
-  animation:thoughtDotTwo 5.2s ease-in-out infinite;
-}
-.final-bot-label{
-  display:block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
-  color:rgba(255,255,255,0.58);
-  margin-bottom:0.3rem;
-}
-.final-bot-text{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.88);}
-.final-bot-mark{
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:92px;height:92px;
-  display:grid;place-items:center;
-}
-.final-bot-mark::before{
-  content:'';
-  position:absolute;inset:6px;border-radius:50%;
-  background:radial-gradient(circle,rgba(34,211,238,0.2),rgba(59,130,246,0.08) 55%,transparent 72%);
-  filter:blur(1px);
-}
-.final-bot-mark img{
-  position:relative;
-  width:74px;height:74px;object-fit:contain;
-  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.18));
-  animation:botBuzz 6.2s ease-in-out infinite;
-}
-@keyframes botBuzz{
-  0%,100%{transform:translate3d(0,0,0) rotate(-4deg);}
-  15%{transform:translate3d(8px,-4px,0) rotate(2deg);}
-  30%{transform:translate3d(-4px,-10px,0) rotate(-1deg);}
-  45%{transform:translate3d(10px,-2px,0) rotate(4deg);}
-  60%{transform:translate3d(-8px,6px,0) rotate(-3deg);}
-  75%{transform:translate3d(6px,10px,0) rotate(2deg);}
-}
-@keyframes thoughtFloat{
-  0%,100%{transform:translateY(0) scale(1);box-shadow:0 16px 36px rgba(0,0,0,0.16);}
-  50%{transform:translateY(-6px) scale(1.015);box-shadow:0 22px 42px rgba(0,0,0,0.18);}
-}
-@keyframes thoughtDotOne{
-  0%,100%{transform:translateY(0) scale(1);}
-  50%{transform:translateY(-3px) scale(1.08);}
-}
-@keyframes thoughtDotTwo{
-  0%,100%{transform:translateY(0) scale(1);}
-  50%{transform:translateY(-2px) scale(1.12);}
-}
 .final-cta .s-tag{justify-content:center;}
 .final-cta .s-tag::before{display:none;}
 .final-h{font-family:'Instrument Serif',serif;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-1px;margin-bottom:1rem;color:var(--white);}
@@ -677,9 +462,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   .proc-cta-box{order:1;margin-bottom:1.5rem;}
   .footer{justify-content:center;text-align:center;}
   .foot-links{justify-content:center;flex-wrap:wrap;}
-  .hero-bot,
-  .svc-bot,
-  .final-bot{display:none;}
 }
 @media(max-width:700px){
   #cursor,#cursor-ring{display:none;}
@@ -701,11 +483,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   .nav-cta{padding:10px 14px;font-size:12px;text-align:center;}
   .hero,.section,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1rem;padding-right:1rem;}
   .hero{padding-top:3.75rem;padding-bottom:3rem;}
-  .hero-bot{width:180px;height:120px;}
-  .hero-bot-note{right:54px;top:0;max-width:130px;padding:0.65rem 0.75rem;}
-  .hero-bot-text{font-size:11px;}
-  .hero-bot-mark{width:70px;height:70px;}
-  .hero-bot-mark img{width:54px;height:54px;}
   .hero-ctas{flex-direction:column;align-items:stretch;gap:0.75rem;}
   .btn-primary,.btn-outline{width:100%;justify-content:center;}
   .hero-form-card,.proc-cta-box,.final-form{padding:1.4rem;}
@@ -721,19 +498,9 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 @media(max-width:420px){
   .nav{gap:0.75rem;}
   .nav-brand{font-size:14px;}
-  .hero-bot-label,.hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
+  .hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
   .stat-n{font-size:2.25rem;}
   .test-q{font-size:15px;}
-}
-@media (prefers-reduced-motion: reduce){
-  .svc-bot-note,
-  .svc-bot-note::before,
-  .svc-bot-note::after,
-  .svc-bot-mark img,
-  .final-bot-note,
-  .final-bot-note::before,
-  .final-bot-note::after,
-  .final-bot-mark img{animation:none;}
 }
 </style>
 </head>
@@ -749,10 +516,9 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
     <div class="nav-brand">Busy Bot <span>Labs</span></div>
   </div>
   <div class="nav-links">
-    <a href="#services" class="nav-ghost">Services</a>
-    <a href="#process" class="nav-ghost">How it works</a>
-    <!-- <a href="#testimonials" class="nav-ghost">Results</a> -->
-    <a href="#contact" class="nav-cta">Book a free call</a>
+    <a href="#services" class="nav-ghost">Included</a>
+    <a href="#process" class="nav-ghost">Package</a>
+    <a href="#contact" class="nav-cta">Book a free review</a>
   </div>
 </nav>
 
@@ -765,109 +531,98 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 
     <!-- LEFT: HEADLINE + SOCIAL PROOF -->
     <div class="hero-left">
-      <a href="#contact" class="bot-link" aria-label="Go to the book your free call form">
-      <div class="hero-bot">
-        <div class="hero-bot-note">
-          <span class="hero-bot-label">Busy Bot</span>
-          <div class="hero-bot-text">Book your free call.</div>
-        </div>
-        <div class="hero-bot-mark">
-          <img src="logosmall.png" alt="">
-        </div>
-      </div>
-      </a>
-      <h1>Stop running your business<br>on <em>memory and chaos.</em></h1>
-      <p class="hero-sub">Busy Bot Labs builds the documentation, workflows, and knowledge systems that let your team operate consistently, without you having to repeat yourself every day.</p>
+      <h1>Custom digital SOP playbooks<br><em>for busy restaurant teams.</em></h1>
+      <p class="hero-sub">A digital SOP playbook turns scattered training, verbal instructions, and messy daily routines into a clean digital system with SOPs, staff training guides, checklists, food safety logs, manager visibility, and simple progress tracking. Your team knows what to do, how to do it, and when it is done.</p>
       <div class="hero-ctas">
         <a href="#hero-form" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Get a free system audit
+          Book a free review
         </a>
-        <a href="#services" class="btn-outline">See what we build</a>
+        <a href="#process" class="btn-outline">See pricing</a>
       </div>
     </div>
 
     <!-- RIGHT: HERO LEAD FORM -->
     <div class="hero-form-card" id="hero-form">
-      <div class="hfc-sublabel">Free discovery call</div>
-      <div class="hfc-title">Get your free ops audit</div>
-      <div class="hfc-desc">We'll identify your 3 biggest system gaps, no strings attached.</div>
+      <div class="hfc-sublabel">Free operations review</div>
+      <div class="hfc-title">See what your playbook should include</div>
+      <div class="hfc-desc">A free 20-minute review for owners and managers who want training, checklists, and accountability without the complexity.</div>
       <div id="hfc-fields">
         <div class="hf-row">
           <label>Your name</label>
           <input type="text" id="h-name" placeholder="Jane Smith">
         </div>
         <div class="hf-row">
-          <label>Work email</label>
-          <input type="email" id="h-email" placeholder="jane@company.com">
+          <label>Best email to reach you</label>
+          <input type="email" id="h-email" placeholder="jane@gmail.com">
         </div>
         <div class="hf-row">
-          <label>Team size</label>
+          <label>Staff size</label>
           <select id="h-size">
-            <option value="">Select team size...</option>
-            <option>Just me (solo)</option>
-            <option>2–10 people</option>
-            <option>11–50 people</option>
-            <option>50+ people</option>
+            <option value="">Select staff size...</option>
+            <option>Under 10 people</option>
+            <option>10-30 people</option>
+            <option>31-50 people</option>
+            <option>35+ people</option>
           </select>
         </div>
         <div class="hf-row">
-          <label>Biggest pain right now</label>
+          <label>Biggest challenge right now</label>
           <select id="h-pain">
             <option value="">Select one...</option>
-            <option>Onboarding takes too long</option>
-            <option>Knowledge lives in people's heads</option>
-            <option>No consistent processes</option>
-            <option>Can't delegate without things breaking</option>
+            <option>Training new hires takes too much manager time</option>
+            <option>Managers repeat the same instructions every shift</option>
+            <option>Opening, closing, or food safety checks get missed</option>
+            <option>I cannot clearly see who has completed what</option>
             <option>All of the above</option>
           </select>
         </div>
-        <button class="hfc-btn" onclick="submitHeroForm()">Claim my free audit →</button>
-        <div class="hfc-note">No credit card. No commitment. Just clarity.</div>
+        <button class="hfc-btn" onclick="submitHeroForm()">Book my free review -></button>
+        <div class="hfc-note">20 minutes. Free. No pressure.</div>
         <div class="hfc-checks">
           <div class="hfc-check">
             <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            Response within 1 business day
+            Built for restaurants, cafes, bakeries, and bars
           </div>
           <div class="hfc-check">
             <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            30-minute call, zero pressure
+            Best fit: 10-30 staff
           </div>
           <div class="hfc-check">
             <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            First deliverable within 48hrs of kickoff
+            Starter setup begins at $750
           </div>
         </div>
       </div>
       <div class="success-box" id="hfc-success">
         <div class="success-ring"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polyline points="4,11 9,16 18,6" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>You're booked.</h3>
-        <p style="color:var(--muted);font-size:14px;margin-top:0.4rem;">Check your email. We'll confirm your call within one business day.</p>
+        <p style="color:var(--muted);font-size:14px;margin-top:0.4rem;">Check your email. We'll confirm a time within one business day.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- TICKER -->
+<!-- LOCAL SIGNAL -->
 <div class="ticker">
   <div class="ticker-track">
-    <div class="ticker-item"><div class="ticker-sep"></div>SOP Development</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Workflow Design</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Knowledge Base Architecture</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Onboarding Systems</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Process Mapping</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Internal Tools</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Role-Based Training</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Documentation Support</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>SOP Development</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Workflow Design</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Knowledge Base Architecture</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Onboarding Systems</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Process Mapping</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Internal Tools</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Role-Based Training</div>
-    <div class="ticker-item"><div class="ticker-sep"></div>Documentation Support</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Digital SOP library</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Staff training hub</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Opening checklists</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Closing checklists</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Food safety logs</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Manager dashboard</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Progress tracking</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Daily accountability</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Digital SOP library</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Staff training hub</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Opening checklists</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Closing checklists</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Food safety logs</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Manager dashboard</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Progress tracking</div>
+    <div class="ticker-item"><div class="ticker-sep"></div>Daily accountability</div>
   </div>
 </div>
 
@@ -875,20 +630,20 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 <div class="stats-band">
   <div class="stats-inner">
     <div class="stat-box">
-      <div class="stat-n"><span id="c1">0</span><span style="color:var(--blue3);">x</span></div>
-      <div class="stat-l">Faster onboarding<br>after our systems</div>
+      <div class="stat-n"><span id="c1">0</span><span style="color:var(--blue3);">-</span><span id="c1b">0</span></div>
+      <div class="stat-l">Staff size this is<br>built for</div>
     </div>
     <div class="stat-box">
-      <div class="stat-n"><span id="c2">0</span><span style="color:var(--blue3);">%</span></div>
-      <div class="stat-l">Drop in repeated<br>manager questions</div>
+      <div class="stat-n"><span id="c2">0</span><span style="color:var(--blue3);">-</span><span id="c2b">0</span></div>
+      <div class="stat-l">SOPs formatted<br>and uploaded</div>
     </div>
     <div class="stat-box">
-      <div class="stat-n"><span id="c3">0</span><span style="color:var(--blue3);">+</span></div>
-      <div class="stat-l">Hours saved per<br>month in admin time</div>
+      <div class="stat-n"><span id="c3">0</span></div>
+      <div class="stat-l">Role-based training<br>paths included</div>
     </div>
     <div class="stat-box">
-      <div class="stat-n"><span id="c4">0</span><span style="color:var(--blue3);">%</span></div>
-      <div class="stat-l">Operational<br>reliability</div>
+      <div class="stat-n"><span style="color:var(--blue3);">$</span><span id="c4">0</span><span style="color:var(--blue3);">+</span></div>
+      <div class="stat-l">Starter setup<br>pricing</div>
     </div>
   </div>
 </div>
@@ -897,39 +652,39 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 <section class="section" id="problem">
   <div class="s-inner">
     <div class="s-tag reveal">The problem</div>
-    <h2 class="s-h reveal">Your team is doing great work.<br><em>Your systems are holding them back.</em></h2>
-    <p class="s-sub reveal">Most growing businesses run on institutional memory, knowledge in people's heads, scattered across Slack, locked in one manager's brain. When you grow, that breaks.</p>
+    <h2 class="s-h reveal">Your team is busy.<br><em>Your training is scattered.</em></h2>
+    <p class="s-sub reveal">Most small restaurant teams run on memory, paper notes, text messages, and whatever the last manager happened to explain. That works until the shift gets busy, a new hire starts, or the closing list gets missed again.</p>
     <div class="prob-grid reveal">
       <div class="prob-card">
         <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#3b82f6" stroke-width="1.2"/><polyline points="9,4.5 9,9 12,11" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4>Onboarding is painfully slow</h4>
-        <p>Every new hire needs weeks of hand-holding because nothing is written down anywhere.</p>
+        <h4>"I already showed them this."</h4>
+        <p>New hires take too long to train because the steps are not written clearly in one place.</p>
       </div>
       <div class="prob-card">
         <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3" stroke="#3b82f6" stroke-width="1.2"/><path d="M3.5 15c0-3.038 2.462-5.5 5.5-5.5s5.5 2.462 5.5 5.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-        <h4>You're the bottleneck</h4>
-        <p>Everything routes through you because you're the only one who knows how things work.</p>
+        <h4>"Managers repeat the same instructions every day."</h4>
+        <p>Questions that should have one clear answer keep interrupting prep, service, and close.</p>
       </div>
       <div class="prob-card">
         <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9A6 6 0 1 1 9 3" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><polyline points="15,3 15,7 11,7" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4>The same mistakes keep happening</h4>
-        <p>Without documented processes, your team makes the same errors in different weeks and months.</p>
+        <h4>"Food safety logs are inconsistent."</h4>
+        <p>Temperature checks, cleaning routines, and handoff notes get done differently depending on who is working.</p>
       </div>
       <div class="prob-card">
         <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="2" stroke="#3b82f6" stroke-width="1.2"/><line x1="5" y1="6.5" x2="13" y2="6.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="9" x2="13" y2="9" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="11.5" x2="9" y2="11.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-        <h4>Quality is inconsistent</h4>
-        <p>Two people doing the same job produce different results because there's no shared standard.</p>
+        <h4>"Opening and closing duties keep getting missed."</h4>
+        <p>Staff know most of the routine, but small misses add up when there is no clear checklist system.</p>
       </div>
       <div class="prob-card">
         <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5.5h12M3 9h8M3 12.5h5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="12.5" r="2.5" stroke="#3b82f6" stroke-width="1.2"/></svg></div>
-        <h4>Info is impossible to find</h4>
-        <p>Processes are buried in email threads, old Slack messages, or someone's desktop from 2021.</p>
+        <h4>"I do not know who knows what."</h4>
+        <p>Owners and managers have no simple view of who has finished training, what was reviewed, or what still needs attention.</p>
       </div>
       <div class="prob-card prob-card-accent">
         <div class="pi" style="background:rgba(37,99,235,0.18);border-color:var(--blue2);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="3,13 7,6 11,10 15,4" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="color:var(--blue3);">Sound familiar?</h4>
-        <p>These are fixable. We've solved all of them, and we can do it for you in weeks, not months.</p>
-        <a href="#hero-form" class="btn-primary" style="margin-top:1.1rem;font-size:12px;padding:10px 16px;display:inline-flex;">Let's fix this →</a>
+        <h4 style="color:var(--blue3);">This is what a digital SOP playbook fixes.</h4>
+        <p>Your team gets a simple digital playbook for training, checklists, food safety logs, and daily accountability.</p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:1.1rem;font-size:12px;padding:10px 16px;display:inline-flex;">Book a free review -></a>
       </div>
     </div>
   </div>
@@ -940,56 +695,45 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   <div class="s-inner">
     <div class="svc-head">
       <div class="svc-copy">
-        <div class="s-tag reveal">What we build</div>
-        <h2 class="s-h reveal">Everything your<br>operations need.</h2>
-        <p class="s-sub reveal">Six core services, one unified goal: a business that runs clearly without you micromanaging every detail.</p>
+        <div class="s-tag reveal">The solution</div>
+        <h2 class="s-h reveal">A digital playbook your staff<br>can actually use.</h2>
+        <p class="s-sub reveal">A digital SOP playbook is a custom training and operations system for small restaurant teams. It gives your staff clear procedures, role-based training paths, opening and closing checklists, food safety logs, and manager visibility without heavy software or complicated rollout.</p>
       </div>
-      <a href="#contact" class="bot-link reveal" aria-label="Go to the book your free call form">
-      <div class="svc-bot">
-        <div class="svc-bot-note">
-          <span class="svc-bot-label">Busy Bot</span>
-          <div class="svc-bot-text">Systems your team can actually use.</div>
-        </div>
-        <div class="svc-bot-mark">
-          <img src="logosmall.png" alt="">
-        </div>
-      </div>
-      </a>
     </div>
     <div class="svc-grid reveal">
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">01</div><div class="svc-arr">→</div></div>
-        <h3>Documentation Systems</h3>
-        <p>SOPs, role guides, and process documentation that captures exactly how your business runs, written to be actually read and used, not filed away and forgotten.</p>
+        <h3>Digital SOP Library</h3>
+        <p>Step-by-step procedures for daily restaurant tasks, organized by role, station, department, or shift with photos, video links, and notes where needed.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">02</div><div class="svc-arr">→</div></div>
-        <h3>Workflow Design</h3>
-        <p>End-to-end workflow maps so every team member knows what to do, when to escalate, and how to hand work off cleanly without dropping anything.</p>
+        <h3>Staff Training Hub</h3>
+        <p>Role-based onboarding paths, first-week training checklists, and simple progress tracking for line cooks, dishwashers, prep cooks, cashiers, managers, and more.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">03</div><div class="svc-arr">→</div></div>
-        <h3>Knowledge Bases</h3>
-        <p>A centralized, searchable home for everything your team needs to know, goodbye to "can you send me that doc again?" forever.</p>
+        <h3>Opening, Closing, and Shift Checklists</h3>
+        <p>Daily checklist workflows for opening duties, closing duties, cleaning routines, prep tasks, food safety checks, and shift handoffs.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">04</div><div class="svc-arr">→</div></div>
-        <h3>Training & Onboarding</h3>
-        <p>Role-specific onboarding systems that turn a week of hand-holding into a self-serve ramp that actually gets people productive fast.</p>
+        <h3>Manager Dashboard</h3>
+        <p>A simple view of staff training progress, incomplete tasks, checklist submissions, SOP updates, and anything that needs manager attention.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">05</div><div class="svc-arr">→</div></div>
-        <h3>Process Mapping</h3>
-        <p>Visual, step-by-step operational maps that expose inefficiencies and give your whole team a shared view of how work really flows.</p>
+        <h3>Staff-Ready Workflows</h3>
+        <p>Clean routines that make expectations clear before the shift starts, during the rush, and after close.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">06</div><div class="svc-arr">→</div></div>
-        <h3>Internal Tools</h3>
-        <p>Lightweight tools built on top of your new structure, making information faster to access and reducing daily operational friction.</p>
+        <h3>Launch Support</h3>
+        <p>I organize your current notes, voice memos, documents, and verbal instructions into clean digital workflows, then walk managers through how to use them.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:2.5rem;" class="reveal">
-      <a href="#contact" class="btn-primary" style="display:inline-flex;">Book a free discovery call →</a>
+      <a href="#contact" class="btn-primary" style="display:inline-flex;">Book a free review -></a>
     </div>
   </div>
 </section>
@@ -997,51 +741,77 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 <!-- PROCESS -->
 <section class="section" id="process">
   <div class="s-inner">
-    <div class="s-tag reveal">How it works</div>
-    <h2 class="s-h reveal" style="margin-bottom:3rem;">From chaos to clarity<br>in <em>four steps.</em></h2>
+    <div class="s-tag reveal">Simple package</div>
+    <h2 class="s-h reveal" style="margin-bottom:3rem;">Digital SOP Playbook Setup<br><em>starting at $750.</em></h2>
     <div class="proc-layout">
       <div class="proc-steps reveal">
         <div class="proc-step">
           <div class="ps-n">01</div>
           <div class="ps-body">
-            <h3>Discover</h3>
-            <p>We listen first. We learn how your business actually operates: the friction, the gaps, and what your team needs most. No assumptions, no templates bolted on from the outside.</p>
+            <h3>What is included</h3>
+            <p>SOP Library setup, training hub setup, opening and closing checklist system, manager dashboard, and a simple structure your team can start using quickly.</p>
           </div>
         </div>
         <div class="proc-step">
           <div class="ps-n">02</div>
           <div class="ps-body">
-            <h3>Organize</h3>
-            <p>We map your operational knowledge into a clear architecture, with workflows structured, processes named, and logic made visible and repeatable for everyone on your team.</p>
+            <h3>Formatted starter content</h3>
+            <p>Up to 10 SOPs formatted and uploaded, up to 3 role-based training paths, and up to 3 checklist templates for daily shift routines.</p>
           </div>
         </div>
         <div class="proc-step">
           <div class="ps-n">03</div>
           <div class="ps-body">
-            <h3>Build</h3>
-            <p>We deliver your documentation, onboarding systems, and knowledge infrastructure, designed for actual daily use from day one, not a filing cabinet that gathers dust.</p>
+            <h3>Manager walkthrough</h3>
+            <p>I walk your managers through the playbook, show them how to check staff progress, review checklist activity, and keep daily routines visible.</p>
           </div>
         </div>
         <div class="proc-step">
           <div class="ps-n">04</div>
           <div class="ps-body">
-            <h3>Support</h3>
-            <p>As your team grows and evolves, we keep your systems current, accurate, and matched to how work actually happens now, not how it worked 6 months ago.</p>
+            <h3>Monthly support available</h3>
+            <p>After setup, optional monthly support is available for SOP updates, checklist improvements, new training paths, and manager-requested changes.</p>
           </div>
         </div>
       </div>
       <div class="proc-cta-box reveal">
-        <div class="pcta-label">Ready to start?</div>
-        <div class="pcta-h">Get your free ops audit, no strings attached.</div>
-        <div class="pcta-sub">In 30 minutes, we'll tell you exactly where your biggest operational gaps are and how to fix them. Whether you work with us or not.</div>
+        <div class="pcta-label">How it works</div>
+        <div class="pcta-h">I turn messy routines into clean staff-ready workflows.</div>
+        <div class="pcta-sub">This is a done-for-you setup for small hospitality teams that need useful structure without enterprise software.</div>
         <div class="pcta-feats">
-          <div class="pcta-feat"><div class="feat-dot"></div>Review your current documentation setup</div>
-          <div class="pcta-feat"><div class="feat-dot"></div>Identify your top 3 operational bottlenecks</div>
-          <div class="pcta-feat"><div class="feat-dot"></div>Give you a prioritized action plan to fix them</div>
-          <div class="pcta-feat"><div class="feat-dot"></div>No pitch, no pressure, just useful insight</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>We review your current training gaps and daily routines.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>You send notes, menus, checklists, voice memos, documents, or rough instructions.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>I organize the content into a clean digital playbook.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>Your managers get a walkthrough so they can use it with the team.</div>
         </div>
-        <a href="#contact" class="btn-primary" style="display:flex;justify-content:center;text-align:center;">Claim my free audit →</a>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;margin-top:0.75rem;letter-spacing:0.3px;">30 min · Free · Zero commitment</div>
+        <a href="#contact" class="btn-primary" style="display:flex;justify-content:center;text-align:center;">Book a free review -></a>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;margin-top:0.75rem;letter-spacing:0.3px;">20 min · Free · No commitment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO AND OUTCOMES -->
+<section class="section" id="ownership">
+  <div class="s-inner">
+    <div class="s-tag reveal">Who it is for</div>
+    <h2 class="s-h reveal">Built for small teams<br><em>that need daily clarity.</em></h2>
+    <p class="s-sub reveal">Digital SOP playbooks are for independent restaurants, cafes, bakeries, bars, and small hospitality teams with about 10 to 30 employees. They are useful when the team is busy, understaffed, training is informal, and managers are tired of repeating the same instructions every shift.</p>
+    <div class="prob-grid reveal">
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2.5" width="12" height="13" rx="2" stroke="#3b82f6" stroke-width="1.2"/><path d="M6 6h6M6 9h6M6 12h3" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <h4>Faster onboarding.</h4>
+        <p>New hires get clearer first-week training, role-based steps, and fewer loose verbal instructions to remember during a busy shift.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 15V5.5L9 3l6 2.5V15" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 15V9h6v6" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Better shift consistency.</h4>
+        <p>Opening, closing, cleaning, prep, handoffs, and food safety routines are easier to follow because the standard is visible.</p>
+      </div>
+      <div class="prob-card">
+        <div class="pi"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="3,13 7,9 10,11 15,4" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 4v4h-4" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Easier manager oversight.</h4>
+        <p>Managers can see training progress, incomplete tasks, checklist activity, and what needs attention before it becomes a bigger problem.</p>
       </div>
     </div>
   </div>
@@ -1051,145 +821,118 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 <section class="section faq-section" id="faq">
   <div class="faq-wrap">
     <div class="s-tag reveal">FAQ</div>
-    <h2 class="s-h reveal">Questions founders ask<br>before we start.</h2>
-    <p class="s-sub reveal">A few quick answers about how Busy Bot Labs works, what we build, and what happens after you book your call.</p>
+    <h2 class="s-h reveal">Questions restaurant owners ask<br>before they book.</h2>
+    <p class="s-sub reveal">Straight answers for small hospitality teams that need useful training, checklists, and manager visibility without a complicated system.</p>
     <div class="faq-list reveal">
       <div class="faq-item open">
         <button class="faq-question" type="button" aria-expanded="true">
-          <span>What kinds of businesses do you work with?</span>
+          <span>Is this custom software?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>We work best with growing service businesses, agencies, consultancies, and operationally messy teams that already have demand but need structure behind the scenes. If your business depends too much on memory, Slack messages, or one key person, we can help.</p>
+          <p>No. This is a done-for-you digital SOP playbook built with practical tools your team can actually use. You are not buying enterprise software. You are getting a clean training system, checklist system, and manager dashboard set up for your restaurant.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>Do you only write SOPs?</span>
+          <span>How long does setup take?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>No. SOPs are only one part of the work. We also design workflow maps, onboarding systems, internal knowledge bases, role guides, and the structure your team needs to actually use documentation day to day.</p>
+          <p>Most starter setups take one to two weeks once I have your notes, current routines, and manager input. A larger playbook with more roles or more SOPs can take longer.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>How do you figure out what we need first?</span>
+          <span>Do I need my SOPs already written?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>We start with a discovery call and a quick operational audit. That helps us spot the biggest bottlenecks, identify what is breaking most often, and prioritize the systems that will create the clearest immediate improvement.</p>
+          <p>No. You can start with messy notes, voice memos, old documents, paper checklists, screenshots, or verbal instructions. I turn that raw material into clean SOPs, checklists, and training paths.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>Will this actually be customized to our business?</span>
+          <span>Can this work for multilingual teams?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>Yes. We do not drop generic templates into your business and call it done. Everything is shaped around how your team already works, where information gets stuck, and what level of detail your people need to use the systems confidently.</p>
+          <p>Yes. The playbook can use simple language, photos, short videos, and translated notes where helpful. That makes training smoother when the team does not all learn the same way.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>What happens after we book the free call?</span>
+          <span>Can managers track staff progress?</span>
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>We review your current setup, talk through the friction points, and show you where the biggest gaps are. If it looks like a fit, we outline the next steps. If not, you still leave with a clearer picture of what your operations need.</p>
+          <p>Yes. The manager dashboard can show who has completed training, which checklists were submitted, what tasks are incomplete, and which SOPs need review.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Can this include opening and closing checklists?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Opening, closing, cleaning, prep, station checks, handoff steps, food safety checks, and manager review workflows can all be included.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What happens after setup?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>You can run the playbook yourself, or use optional monthly support for updates, improvements, new SOPs, and changes as your menu, team, or routines change.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Is this good for small restaurants?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Digital SOP playbooks are designed for small teams that need something practical, affordable, and easy to use. They are best for restaurants, cafes, bakeries, bars, and hospitality teams with about 10 to 30 employees.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- TESTIMONIALS -->
-<!--
-<section class="section test-wrap" id="testimonials">
-  <div class="s-inner">
-    <div class="s-tag reveal">What clients say</div>
-    <h2 class="s-h reveal">Real results from<br>real businesses.</h2>
-    <div class="test-grid reveal">
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <div class="test-q">"We cut our onboarding time in half. New hires are actually self-sufficient in their first week now. I can't believe we operated without this."</div>
-        <div class="test-author">
-          <div class="test-avatar">JT</div>
-          <div>
-            <div class="test-name">Jordan T.</div>
-            <div class="test-role">Ops Director, 28-person agency</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <div class="test-q">"I was the bottleneck for everything. After Busy Bot built our knowledge base, my team stopped asking me the same questions every single week."</div>
-        <div class="test-author">
-          <div class="test-avatar">AM</div>
-          <div>
-            <div class="test-name">Aisha M.</div>
-            <div class="test-role">Founder, e-commerce brand</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <div class="test-q">"The process mapping alone was worth every penny. We could finally see where the inefficiencies were hiding, and actually fix them for good."</div>
-        <div class="test-author">
-          <div class="test-avatar">SK</div>
-          <div>
-            <div class="test-name">Sam K.</div>
-            <div class="test-role">CEO, SaaS startup</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
--->
 
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="final-glow"></div>
-  <a href="#contact" class="bot-link final-bot" aria-label="Go to the book your free call form">
-    <div class="final-bot-note">
-      <span class="final-bot-label">Busy Bot</span>
-      <div class="final-bot-text">We reply within 1 business day.</div>
-    </div>
-    <div class="final-bot-mark">
-      <img src="logosmall.png" alt="">
-    </div>
-  </a>
   <div style="position:relative;z-index:1;">
-    <div class="s-tag" style="justify-content:center;"><span style="width:24px;height:1px;background:var(--cyan);display:block;"></span>Book your free call</div>
-    <h2 class="final-h">Your team deserves<br><em>systems that work.</em></h2>
-    <p class="final-sub">Stop repeating yourself. Stop firefighting. Book a free 30-minute call and we'll show you exactly what's possible for your business.</p>
+    <div class="s-tag" style="justify-content:center;"><span style="width:24px;height:1px;background:var(--cyan);display:block;"></span>Book your free review</div>
+    <h2 class="final-h">Give your team one place<br><em>to know what done means.</em></h2>
+    <p class="final-sub">Book a free 20-minute operations review. We will talk through your training gaps, daily checklists, food safety routines, and where a digital SOP playbook would help first.</p>
     <div class="final-form">
-      <div class="ff-label">Free discovery call</div>
-      <div class="ff-title">Book your free ops audit</div>
+      <div class="ff-label">Free operations review</div>
+      <div class="ff-title">Book your digital SOP playbook review</div>
       <div id="ff-fields">
         <div class="ff-row"><label>Name</label><input type="text" id="f-name" placeholder="Jane Smith"></div>
-        <div class="ff-row"><label>Work email</label><input type="email" id="f-email" placeholder="jane@company.com"></div>
-        <div class="ff-row"><label>Company</label><input type="text" id="f-co" placeholder="Your company name"></div>
+        <div class="ff-row"><label>Best email to reach you</label><input type="email" id="f-email" placeholder="jane@gmail.com"></div>
+        <div class="ff-row"><label>Restaurant, cafe, bakery, or bar</label><input type="text" id="f-co" placeholder="Your business name"></div>
         <div class="ff-row">
           <label>Biggest challenge</label>
           <select id="f-ch">
             <option value="">Select one...</option>
-            <option>Onboarding takes too long</option>
-            <option>Knowledge lives in people's heads</option>
-            <option>No consistent processes</option>
-            <option>Can't delegate without things breaking</option>
+            <option>Training new hires takes too much manager time</option>
+            <option>Managers repeat the same instructions every shift</option>
+            <option>Opening, closing, or food safety checks get missed</option>
+            <option>I cannot clearly see who has completed what</option>
             <option>All of the above</option>
           </select>
         </div>
-        <div class="ff-row"><label>Anything else? (optional)</label><textarea id="f-note" placeholder="Tell us more about your situation..."></textarea></div>
-        <button class="ff-btn" onclick="submitFinalForm()">Book my free call →</button>
-        <div class="ff-note">We reply within 1 business day. Zero spam. Zero pressure.</div>
+        <div class="ff-row"><label>Anything else? (optional)</label><textarea id="f-note" placeholder="Tell us about your team, training gaps, or checklist problems..."></textarea></div>
+        <button class="ff-btn" onclick="submitFinalForm()">Book my free review -></button>
+        <div class="ff-note">We reply within 1 business day. No spam. No pressure.</div>
       </div>
       <div class="success-box" id="ff-success">
         <div class="success-ring"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polyline points="4,11 9,16 18,6" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>You're in.</h3>
-        <p style="color:var(--muted);margin-top:0.4rem;">We'll be in touch within one business day to confirm your discovery call. Talk soon.</p>
+        <p style="color:var(--muted);margin-top:0.4rem;">We'll be in touch within one business day to confirm your digital SOP playbook review.</p>
       </div>
     </div>
   </div>
@@ -1202,12 +945,12 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
     <div class="foot-brand">Busy Bot <span>Labs</span></div>
   </div>
   <div class="foot-links">
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#testimonials">Results</a>
+    <a href="#services">Digital SOP playbooks</a>
+    <a href="#process">Package</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="foot-copy">© 2026 Busy Bot Labs · Building the structure behind better operations</div>
+  <div class="foot-copy">© 2026 Busy Bot Labs · Digital SOP Playbooks for independent restaurants, cafes, bakeries, bars, and small hospitality teams</div>
 </footer>
 
 <script>
@@ -1267,10 +1010,12 @@ function animCount(el,target,dur){
 const statObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      animCount(document.getElementById('c1'),3,1200);
-      animCount(document.getElementById('c2'),85,1600);
-      animCount(document.getElementById('c3'),50,1800);
-      animCount(document.getElementById('c4'),95,1400);
+      animCount(document.getElementById('c1'),10,1200);
+      animCount(document.getElementById('c1b'),30,1400);
+      animCount(document.getElementById('c2'),6,1400);
+      animCount(document.getElementById('c2b'),10,1600);
+      animCount(document.getElementById('c3'),3,1400);
+      animCount(document.getElementById('c4'),750,1800);
       statObs.disconnect();
     }
   });
@@ -1351,7 +1096,7 @@ async function submitHeroForm(){
   const s=document.getElementById('h-size').value;
   const p=document.getElementById('h-pain').value;
   const button=document.querySelector('.hfc-btn');
-  if(!n||!e||!s||!p){alert('Please fill in all fields to claim your audit.');return;}
+  if(!n||!e||!s||!p){alert('Please fill in all fields to book your call.');return;}
 
   await submitToFormspree({
     endpoint:FORMSPREE_ENDPOINTS.hero,
@@ -1361,11 +1106,11 @@ async function submitHeroForm(){
     successBoxId:'hfc-success',
     errorMessage:'We could not send your request right now. Please try again in a moment.',
     payload:{
-      form_name:'Labs Leads',
+      form_name:'Digital SOP Playbook Leads',
       form_type:'Hero Form',
       name:n,
       email:e,
-      team_size:s,
+      staff_size:s,
       biggest_pain:p
     }
   });
@@ -1389,11 +1134,11 @@ async function submitFinalForm(){
     successBoxId:'ff-success',
     errorMessage:'We could not send your booking request right now. Please try again in a moment.',
     payload:{
-      form_name:'Labs Leads',
+      form_name:'Digital SOP Playbook Leads',
       form_type:'Final Form',
       name:n,
       email:e,
-      company:c,
+      restaurant:c,
       biggest_challenge:ch,
       note
     }
