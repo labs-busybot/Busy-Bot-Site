@@ -170,18 +170,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 }
 .ticker-sep{width:4px;height:4px;background:var(--blue2);border-radius:50%;flex-shrink:0;}
 
-/* STATS BAND */
-.stats-band{
-  padding:3rem 3rem;background:linear-gradient(135deg,var(--ink),var(--ink2));
-  border-bottom:1px solid var(--border);
-}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
-.stat-box{background:rgba(255,255,255,0.03);padding:2rem 1.75rem;transition:background 0.3s;}
-.stat-box:hover{background:rgba(255,255,255,0.08);}
-.stat-n{font-family:'Instrument Serif',serif;font-size:2.8rem;color:var(--white);line-height:1;margin-bottom:0.4rem;}
-.stat-n span{color:var(--blue3);}
-.stat-l{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.58);letter-spacing:1.2px;text-transform:uppercase;line-height:1.55;}
-
 /* SECTIONS */
 .section{padding:6rem 3rem;}
 .s-inner{max-width:1100px;margin:0 auto;}
@@ -438,19 +426,18 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 /* RESPONSIVE */
 @media(max-width:1024px){
   .nav{padding:0 2rem;}
-  .hero,.section,.stats-band,.final-cta,.footer{padding-left:2rem;padding-right:2rem;}
+  .hero,.section,.final-cta,.footer{padding-left:2rem;padding-right:2rem;}
   .hero-inner{gap:2.75rem;grid-template-columns:minmax(0,1fr) minmax(300px,380px);}
   .proc-layout{gap:2.75rem;}
 }
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;}
   .hero-form-card{display:block;max-width:560px;margin:0 auto;}
-  .stats-inner{grid-template-columns:repeat(2,1fr);}
   .prob-grid,.svc-grid,.test-grid{grid-template-columns:1fr;}
   .proc-layout{grid-template-columns:1fr;}
   .proc-cta-box{position:static;}
   .nav-links .nav-ghost{display:none;}
-  .section,.hero,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1.5rem;padding-right:1.5rem;}
+  .section,.hero,.final-cta,.footer,.test-wrap .section{padding-left:1.5rem;padding-right:1.5rem;}
   .nav{padding:0 1.5rem;}
   .hero{padding-top:4.5rem;padding-bottom:3.5rem;}
   .hero-left{text-align:center;}
@@ -465,7 +452,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 }
 @media(max-width:700px){
   #cursor,#cursor-ring{display:none;}
-  .stats-inner{grid-template-columns:1fr;}
   .test-grid{gap:1rem;}
   .nav{height:auto;min-height:68px;padding-top:0.9rem;padding-bottom:0.9rem;align-items:flex-start;gap:1rem;}
   .nav-links{margin-left:auto;}
@@ -475,18 +461,17 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
 }
 @media(max-width:600px){
   .nav-links a:not(.nav-cta){display:none;}
-  .stat-box{padding:1.5rem 1.25rem;}
   .nav{padding-left:1rem;padding-right:1rem;}
   .nav-logo{gap:9px;min-width:0;}
   .nav-logo img{height:34px;width:34px;}
   .nav-brand{font-size:15px;}
   .nav-cta{padding:10px 14px;font-size:12px;text-align:center;}
-  .hero,.section,.stats-band,.final-cta,.footer,.test-wrap .section{padding-left:1rem;padding-right:1rem;}
+  .hero,.section,.final-cta,.footer,.test-wrap .section{padding-left:1rem;padding-right:1rem;}
   .hero{padding-top:3.75rem;padding-bottom:3rem;}
   .hero-ctas{flex-direction:column;align-items:stretch;gap:0.75rem;}
   .btn-primary,.btn-outline{width:100%;justify-content:center;}
   .hero-form-card,.proc-cta-box,.final-form{padding:1.4rem;}
-  .prob-card,.svc-card,.test-card,.stat-box{padding:1.35rem;}
+  .prob-card,.svc-card,.test-card{padding:1.35rem;}
   .faq-question{padding:1rem 1rem;font-size:14px;}
   .faq-answer,.faq-item.open .faq-answer{padding-left:1rem;padding-right:1rem;}
   .proc-step{grid-template-columns:42px 1fr;gap:0.9rem;padding:1.35rem 0;}
@@ -499,7 +484,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   .nav{gap:0.75rem;}
   .nav-brand{font-size:14px;}
   .hfc-sublabel,.ff-label,.pcta-label,.s-tag{letter-spacing:1.2px;}
-  .stat-n{font-size:2.25rem;}
   .test-q{font-size:15px;}
 }
 </style>
@@ -532,7 +516,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
     <!-- LEFT: HEADLINE + SOCIAL PROOF -->
     <div class="hero-left">
       <h1>Custom digital SOP playbooks<br><em>for busy restaurant teams.</em></h1>
-      <p class="hero-sub">A digital SOP playbook turns scattered training, verbal instructions, and messy daily routines into a clean digital system with SOPs, staff training guides, checklists, food safety logs, manager visibility, and simple progress tracking. Your team knows what to do, how to do it, and when it is done.</p>
+      <p class="hero-sub">If your team is still learning by memory, texts, and repeated manager reminders, it is time to document the way your restaurant actually works. I come on site, capture your real procedures, and build a digital SOP playbook your staff can follow every shift. Book a free review and see what should be documented first.</p>
       <div class="hero-ctas">
         <a href="#hero-form" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -626,28 +610,6 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats-band">
-  <div class="stats-inner">
-    <div class="stat-box">
-      <div class="stat-n"><span id="c1">0</span><span style="color:var(--blue3);">-</span><span id="c1b">0</span></div>
-      <div class="stat-l">Staff size this is<br>built for</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n"><span id="c2">0</span><span style="color:var(--blue3);">-</span><span id="c2b">0</span></div>
-      <div class="stat-l">SOPs formatted<br>and uploaded</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n"><span id="c3">0</span></div>
-      <div class="stat-l">Role-based training<br>paths included</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n"><span id="c4">0</span></div>
-      <div class="stat-l">Manager walkthrough<br>included</div>
-    </div>
-  </div>
-</div>
-
 <!-- PROBLEM -->
 <section class="section" id="problem">
   <div class="s-inner">
@@ -704,7 +666,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">01</div><div class="svc-arr">→</div></div>
         <h3>Digital SOP Library</h3>
-        <p>Step-by-step procedures for daily restaurant tasks, organized by role, station, department, or shift with photos, video links, and notes where needed.</p>
+        <p>Step-by-step procedures for daily restaurant tasks, organized by role, station, department, or shift with photos and short videos captured on location.</p>
       </div>
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">02</div><div class="svc-arr">→</div></div>
@@ -729,7 +691,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
       <div class="svc-card">
         <div class="svc-top"><div class="svc-num">06</div><div class="svc-arr">→</div></div>
         <h3>Launch Support</h3>
-        <p>I organize your current notes, voice memos, documents, and verbal instructions into clean digital workflows, then walk managers through how to use them.</p>
+        <p>I come into the location, interview the people who know the work, record each step, capture photos and short videos, then turn it into clean digital workflows.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:2.5rem;" class="reveal">
@@ -776,12 +738,13 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
       </div>
       <div class="proc-cta-box reveal">
         <div class="pcta-label">How it works</div>
-        <div class="pcta-h">I turn messy routines into clean staff-ready workflows.</div>
-        <div class="pcta-sub">This is a done-for-you setup for small hospitality teams that need useful structure without enterprise software.</div>
+        <div class="pcta-h">I capture the work on site, then turn it into clean staff-ready workflows.</div>
+        <div class="pcta-sub">This is a done-for-you setup for small hospitality teams. I document how the work actually happens in your location, then build the playbook from that.</div>
         <div class="pcta-feats">
-          <div class="pcta-feat"><div class="feat-dot"></div>We review your current training gaps and daily routines.</div>
-          <div class="pcta-feat"><div class="feat-dot"></div>You send notes, menus, checklists, voice memos, documents, or rough instructions.</div>
-          <div class="pcta-feat"><div class="feat-dot"></div>I organize the content into a clean digital playbook.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>I visit the location and review the routines that need to be documented.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>I interview owners, managers, and staff to understand how the work is actually done.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>I record the steps, take photos, and shoot short videos needed to explain each SOP clearly.</div>
+          <div class="pcta-feat"><div class="feat-dot"></div>I turn that fieldwork into a clean digital playbook your team can use.</div>
           <div class="pcta-feat"><div class="feat-dot"></div>Your managers get a walkthrough so they can use it with the team.</div>
         </div>
         <a href="#contact" class="btn-primary" style="display:flex;justify-content:center;text-align:center;">Book a free review -></a>
@@ -848,7 +811,7 @@ body.cursor-hover #cursor-ring{transform:translate(-50%,-50%) scale(1.8);border-
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <p>No. You can start with messy notes, voice memos, old documents, paper checklists, screenshots, or verbal instructions. I turn that raw material into clean SOPs, checklists, and training paths.</p>
+          <p>No. I come into the location, interview the people who know the work, and document the steps myself. If you already have notes or old checklists, they can help, but they are not required.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -994,34 +957,6 @@ document.querySelectorAll('.faq-question').forEach(button=>{
     }
   });
 });
-
-/* STAT COUNTERS */
-function animCount(el,target,dur){
-  let start=null;
-  const step=ts=>{
-    if(!start)start=ts;
-    const p=Math.min((ts-start)/dur,1);
-    el.textContent=Math.round(p*target);
-    if(p<1)requestAnimationFrame(step);
-    else el.textContent=target;
-  };
-  requestAnimationFrame(step);
-}
-const statObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      animCount(document.getElementById('c1'),10,1200);
-      animCount(document.getElementById('c1b'),30,1400);
-      animCount(document.getElementById('c2'),6,1400);
-      animCount(document.getElementById('c2b'),10,1600);
-      animCount(document.getElementById('c3'),3,1400);
-      animCount(document.getElementById('c4'),1,1200);
-      statObs.disconnect();
-    }
-  });
-},{threshold:0.5});
-const sb=document.querySelector('.stats-band');
-if(sb)statObs.observe(sb);
 
 /* FORMSPREE CONFIG */
 const FORMSPREE_ENDPOINTS={
